@@ -16,8 +16,14 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <h2>Bienvenido <?php echo $_SESSION['usuario_nombre']; ?></h2>
 
-<p>Aquí irá el sistema de citas.</p>
+<p>Panel de paciente</p>
 
+<!-- BOTÓN PARA AGENDAR CITA -->
+<a href="citas.php">Agendar Cita</a>
+
+<br><br>
+
+<!-- BOTÓN CERRAR SESIÓN -->
 <a href="logout.php">Cerrar sesión</a>
 
 </body>
