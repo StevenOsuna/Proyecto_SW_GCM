@@ -1,0 +1,56 @@
+html, body{
+    padding-top: 56px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.7rem;
+    color: #ffffff !important;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+}
+
+.btn, btn-light{
+    background-color: rgb(241, 161, 14);
+    padding: 7px;
+    margin: 5px;
+
+}
+
+
+footer{
+    font-size: 0.9rem;
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Menu de botones del registro */
+.collapse, navbar-collapse {
+    transition: height 0.5s ease;
+}
