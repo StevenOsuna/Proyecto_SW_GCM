@@ -31,7 +31,7 @@ $horarios = [
 
 <?php foreach ($horarios as $hora): ?>
 
-    <form action="guardar_cita.php" method="POST" style="margin-bottom:10px;">
+    <form action="guardar_citas.php" method="POST" style="margin-bottom:10px;">
 
         <input type="hidden" name="fecha" value="<?php echo $fecha; ?>">
         <input type="hidden" name="hora" value="<?php echo $hora; ?>">

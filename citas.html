@@ -14,7 +14,6 @@ if (!isset($_SESSION['usuario_id'])) {
     <title>Agendar Cita</title>
 
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
 </head>
@@ -23,7 +22,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <h2>Agendar Cita</h2>
 
-<div id="calendar"></div>
+<div id="calendar" style="max-width:900px; margin:auto;"></div>
 
 <script>
 
@@ -34,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
         initialView: 'dayGridMonth',
+
+        locale: 'es',
+
+        events: 'obtener_citas.php', // ← aquí cargamos colores desde BD
 
         dateClick: function(info) {
 
@@ -49,6 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 </script>
+
+<br>
+
+<a href="panel.php">Volver al Panel</a>
 
 </body>
 </html>
