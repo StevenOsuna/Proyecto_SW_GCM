@@ -19,7 +19,7 @@ include 'navbar.php';
 <header class="bg-light p-5 text-center">
     <h1>Bienvenidos</h1>
     <p>Atención médica profesional y de calidad</p>
-    <a href="login.html" class="btn btn-primary">Agendar Cita</a>
+    <a href="login.php" class="btn btn-primary">Agendar Cita</a>
 </header>
 
 
