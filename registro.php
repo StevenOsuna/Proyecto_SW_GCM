@@ -10,6 +10,8 @@
 
 <h2>Registro de Paciente</h2>
 
+<main>
+
 <form action="guardar_usuario.php" method="POST">
 
     Nombre:
@@ -28,5 +30,8 @@
 
 </form>
 
+</main>
+
+<?php include 'footer.php'; ?>
 </body>
 </html>
