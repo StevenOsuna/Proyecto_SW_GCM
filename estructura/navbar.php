@@ -14,9 +14,9 @@
                     <ul class="navbar-nav">
                         <?php if ($pageTitle !== 'Login' && $pageTitle !== 'Registro' && $pageTitle !=='Login ADMIN'): ?>
                             <li class="nav-item">
-                                <a href="login.php" class="btn btn-light">Iniciar Sesión</a>
+                                <a href="./auth/login.php" class="btn btn-light">Iniciar Sesión</a>
                             </li> 
-                            <li class="nav-item"><a href="registro.php" class="btn btn-warning">Registrarse</a>
+                            <li class="nav-item"><a href="auth/registro.php" class="btn btn-warning">Registrarse</a>
                             </li>
                         <?php endif; ?>
                     </ul>

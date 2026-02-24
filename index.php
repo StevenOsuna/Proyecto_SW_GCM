@@ -12,7 +12,7 @@
 <body>
 
 <?php $pageTitle = "Inicio";
-include 'navbar.php';
+include 'estructura/navbar.php';
 ?>
 
 <main>
@@ -42,7 +42,7 @@ include 'navbar.php';
 
 </main>
 <!--Footer -->
-<?php include 'footer.php'; ?> 
+<?php include 'estructura/footer.php'; ?> 
 
 </body>
 
