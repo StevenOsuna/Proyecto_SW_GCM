@@ -12,13 +12,9 @@
 </head>
 
     <body>
-      <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand fw-bold text-primary" href="#">
-            Iniciar Sesión
-          </a>
-        </div>
-      </nav>
+      <?php $pageTitle = "Login";
+      include 'navbar.php';
+      ?>
     <main>
 
       <form action="validar_login.php" method="POST">

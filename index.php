@@ -11,29 +11,11 @@
 
 <body>
 
-<!--Barra de navegacion fija-->
-    <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">
-                Consultorio Médico
-            </a>
-<!--Boton para el menu desde vista dispositivo movil-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-        <div class="collapse navbar-collapse justify-content-end" id="menu">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="login.html" class="btn btn-primary">Iniciar Sesión</a></li>
-                <li class="nav-item"><a href="registro.html" class="btn btn-primary">Registrarse</a></li>
-            </ul>
-        </div>
+<?php $pageTitle = "Inicio";
+include 'navbar.php';
+?>
 
-        </div>
-    </nav>
 <main>
-
-
 <header class="bg-light p-5 text-center">
     <h1>Bienvenidos</h1>
     <p>Atención médica profesional y de calidad</p>
@@ -58,12 +40,8 @@
     </div>
     </section>
 
-
-
-
-
 </main>
-
+<!--Footer -->
 <?php include 'footer.php'; ?> 
 
 </body>
