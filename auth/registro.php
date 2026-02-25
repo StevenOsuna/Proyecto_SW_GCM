@@ -18,7 +18,7 @@ include '../estructura/navbar.php';
 
 <main>
 
-<form action="guardar_usuario.php" method="POST">
+<form action="../guardar_usuario.php" method="POST">
 
     Nombre:
     <input type="text" name="nombre" required><br><br>

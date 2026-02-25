@@ -17,7 +17,7 @@
       ?>
     <main>
 
-      <form action="validar_login.php" method="POST">
+      <form action="../validar_login.php" method="POST">
         Email:
         <input type="email" name="email" required /><br /><br />
 
