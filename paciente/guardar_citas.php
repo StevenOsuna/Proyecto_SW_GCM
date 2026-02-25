@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php");
+include("../config/conexion.php");
 
 $paciente_id = $_SESSION['usuario_id'];
 $fecha = $_POST['fecha'];
@@ -16,7 +16,7 @@ $resultado = $conn->query($verificar);
 if ($resultado->num_rows > 0) {
 
     echo "Horario no disponible <br>";
-    echo "<a href='citas.php'>Volver</a>";
+    echo "<a href='../citas.php'>Volver</a>";
     exit();
 }
 

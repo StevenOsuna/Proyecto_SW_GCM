@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once("conexion.php");
+require_once("../config/conexion.php");
 
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin_login.html");
+    header("Location: admin/admin_login.php");
     exit();
 }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dateClick: function(info) {
 
             if(confirm("¿Bloquear este día?")) {
-                window.location.href = "bloquear_dia.php?fecha=" + info.dateStr;
+                window.location.href = "../bloquear_dia.php?fecha=" + info.dateStr;
             }
 
         }
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <br>
-<a href="admin_panel.php">Volver</a>
+<a href="admin/admin_panel.php">Volver</a>
 
 </body>
 </html>

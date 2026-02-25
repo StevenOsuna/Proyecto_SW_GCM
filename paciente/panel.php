@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
+    header("Location: ../auth/login.php");
     exit();
 }
 ?>
@@ -21,7 +21,7 @@ if (!isset($_SESSION['usuario_id'])) {
 <p>Panel de paciente</p>
 
 <!-- BOTÓN PARA AGENDAR CITA -->
-<a href="citas.php">Agendar Cita</a>
+<a href="../citas.php">Agendar Cita</a>
 
 <br><br>
 

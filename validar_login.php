@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php");
+include("config/conexion.php");
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -17,7 +17,7 @@ if ($resultado->num_rows > 0) {
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nombre'] = $usuario['nombre'];
 
-        header("Location: panel.php");
+        header("Location: paciente/panel.php");
         exit();
 
     } else {

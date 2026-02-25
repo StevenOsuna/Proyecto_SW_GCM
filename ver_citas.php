@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexion.php");
+include("config/conexion.php");
 
 $sql = "SELECT c.fecha, c.hora, p.nombre 
         FROM citas c

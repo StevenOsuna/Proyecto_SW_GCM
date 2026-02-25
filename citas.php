@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
+    header("Location: auth/login.php");
     exit();
 }
 ?>
@@ -38,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         locale: 'es',
 
-        events: 'obtener_citas.php', // ← aquí cargamos colores desde BD
+        events: 'api/obtener_citas.php', // ← aquí cargamos colores desde BD
 
         dateClick: function(info) {
 
             var fecha = info.dateStr;
-            window.location.href = "horarios.php?fecha=" + fecha;
+            window.location.href = "paciente/horarios.php?fecha=" + fecha;
 
         }
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <br>
 
-<a href="panel.php">Volver al Panel</a>
+<a href="paciente/panel.php">Volver al Panel</a>
 
 </body>
 </html>
