@@ -12,7 +12,7 @@
 <body>
 
 <?php $pageTitle = "Login ADMIN";
-include 'navbar.php';
+include 'estructura/navbar.php';
 ?>
 
 <main>
@@ -30,6 +30,6 @@ Contraseña:
 </form>
 </main>
 
-<?php include 'footer.php'; ?> 
+<?php include 'estructura/footer.php'; ?> 
 </body>
 </html>

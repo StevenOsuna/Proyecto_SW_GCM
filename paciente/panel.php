@@ -26,7 +26,7 @@ if (!isset($_SESSION['usuario_id'])) {
 <br><br>
 
 <!-- BOTÓN CERRAR SESIÓN -->
-<a href="logout.php">Cerrar sesión</a>
+<a href="../config/logout.php">Cerrar sesión</a>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin_login.html");
+    header("Location: admin_login.php");
     exit();
 }
 ?>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['admin_id'])) {
     <li><a href="admin_citas.php">Ver Citas</a></li>
     <li><a href="admin_calendario.php">Calendario</a></li>
     <li><a href="admin_horarios.php">Configurar Horarios</a></li>
-    <li><a href="logout.php">Cerrar sesión</a></li>
+    <li><a href="../config/logout.php">Cerrar sesión</a></li>
 </ul>
 
 </body>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("conexion.php");
+require_once("../config/conexion.php");
 
 if (!isset($_POST['usuario']) || !isset($_POST['password'])) {
     die("Acceso inválido");
