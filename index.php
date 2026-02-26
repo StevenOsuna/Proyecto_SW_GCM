@@ -30,7 +30,7 @@ include 'estructura/navbar.php';
            background: linear-gradient(#007bff, #007bff74)
            center/cover no-repeat;">
     <div class="container flex-column align-items-start m-5">
-        <h1 class="display-5 fw-bold text-white">Conoce un poco de Nosotros</h1>
+        <h1 class="display-5 fw-bold text-white">¿Quienés Somos?</h1>
 
         <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</a>
         <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</a>
