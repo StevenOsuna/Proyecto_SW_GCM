@@ -58,9 +58,28 @@ include 'estructura/navbar.php';
                 <h5 class="modal-title">Nuestra Historia</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
-                <h1>Lorem ipsum dolor sit amet.</h1>
-            </div>
+            <div class="modal-body text-center">
+            <i class="bi bi-hospital-fill text-primary" style="font-size: 3rem;"></i>
+
+             <p class="fs-5 mt-3">
+             Nuestro consultorio médico nació con el propósito de brindar atención
+             médica accesible, profesional y humana a la comunidad. Desde nuestros
+            inicios, nos hemos enfocado en ofrecer un servicio basado en la confianza,
+             el respeto y la ética profesional.
+            </p>
+
+            <p class="fs-5">
+            A lo largo de los años, hemos crecido gracias a la preferencia de nuestros
+            pacientes, incorporando mejores prácticas médicas y fortaleciendo nuestro
+            compromiso con la salud y el bienestar integral. Cada consulta representa
+             para nosotros la oportunidad de servir con dedicación y responsabilidad.
+            </p>
+
+            <p class="fs-5">
+            Hoy continuamos trabajando con la misma vocación que nos dio origen:
+            cuidar la salud de cada persona con profesionalismo, calidez y compromiso.
+            </p>
+        </div>
         </div>
     </div>
 </div>
