@@ -54,3 +54,14 @@ html {
 .collapse, navbar-collapse {
     transition: height 0.5s ease;
 }
+
+/* Título Bienvenidos más grande */
+.titulo-bienvenida {
+    font-size: 3.5rem; /* puedes aumentar a 4rem si lo quieres más grande */
+    font-weight: bold;
+}
+
+/* Título ¿Quiénes Somos? más pequeño */
+.titulo-quienes {
+    font-size: 2rem; /* ajusta si lo quieres más pequeño */
+}
