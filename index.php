@@ -39,7 +39,6 @@ include 'estructura/navbar.php';
 
     </div>
     </section>
-
 </main>
 <!--Footer -->
 <?php include 'estructura/footer.php'; ?> 
@@ -74,8 +73,16 @@ include 'estructura/navbar.php';
                 <h5 class="modal-title">Misión</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
-                <h1>Lorem ipsum dolor sit amet.</h1>
+            <div class="modal-body text-center">
+            <i class="bi bi-heart-pulse-fill text-primary" style="font-size: 3rem;"></i>
+            <p class="fs-5 mt-3">
+                Nuestra misión es brindar atención médica integral, profesional y humanizada,
+            enfocada en la prevención, diagnóstico y tratamiento oportuno de nuestros pacientes.
+            Nos comprometemos a ofrecer un servicio de calidad, basado en principios éticos,
+            respeto, empatía y responsabilidad, utilizando tecnología adecuada y personal
+            capacitado para garantizar el bienestar y la salud de la comunidad.
+    </p>
+</div>
             </div>
         </div>
     </div>
