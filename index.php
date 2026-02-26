@@ -17,7 +17,7 @@ include 'estructura/navbar.php';
 
 <main>
 <header class="bg-light p-5 text-center">
-    <h1>Bienvenidos</h1>
+    <h1 class="titulo-bienvenida">Bienvenidos</h1>
     <p>Atención médica profesional y de calidad</p>
     <a href="auth/login.php" class="btn btn-primary">Agendar Cita</a>
 </header>
@@ -30,7 +30,7 @@ include 'estructura/navbar.php';
            background: linear-gradient(#007bff, #007bff74)
            center/cover no-repeat;">
     <div class="container flex-column align-items-start m-5">
-        <h1 class="display-5 fw-bold text-white">¿Quiénes Somos?</h1>
+        <h1 class="titulo-quienes fw-bold text-white">¿Quiénes Somos?</h1>
 
         <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</a>
         <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</a>
