@@ -96,9 +96,17 @@ include 'estructura/navbar.php';
                 <h5 class="modal-title">Visión</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
-                <h1>Lorem ipsum dolor sit amet.</h1>
-            </div>
+            <div class="modal-body text-center">
+             <i class="bi bi-eye-fill text-primary" style="font-size: 3rem;"></i>
+
+            <p class="fs-5 mt-3">
+                 Nuestra visión es consolidarnos como un consultorio médico de referencia
+                en la comunidad, reconocido por la excelencia en el servicio, la calidad
+                profesional y el trato humano hacia nuestros pacientes. Aspiramos a
+                crecer continuamente, incorporando innovación y mejores prácticas
+                médicas que contribuyan al bienestar integral de quienes confían en nosotros.
+    </p>
+</div>
         </div>
     </div>
 </div>
@@ -111,8 +119,16 @@ include 'estructura/navbar.php';
                 <h5 class="modal-title">Valores</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body">
-                <h1>Lorem ipsum dolor sit amet.</h1>
+            <div class="modal-body text-center">
+                 <i class="bi bi-heart-fill text-primary" style="font-size: 3rem;"></i>
+
+                <ul class="list-unstyled fs-5 mt-3">
+                <li><strong>Ética:</strong> Actuamos con honestidad y responsabilidad profesional.</li>
+                 <li><strong>Empatía:</strong> Escuchamos y comprendemos las necesidades de nuestros pacientes.</li>
+                <li><strong>Compromiso:</strong> Brindamos atención oportuna y de calidad.</li>
+                <li><strong>Respeto:</strong> Tratamos a cada persona con dignidad y calidez.</li>
+                <li><strong>Profesionalismo:</strong> Nos mantenemos en constante actualización médica.</li>
+                 </ul>
             </div>
         </div>
     </div>
