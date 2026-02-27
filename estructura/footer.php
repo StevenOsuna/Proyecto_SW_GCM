@@ -6,7 +6,7 @@
                 <ul class="list-unstyled">
                     <li class="mb-3 d-flex align-items-start">
                         <i class="bi bi-geo-alt-fill me-3 text-primary fs-5"></i> 
-                        <span>Calle Principal #123, Colonia Centro,<br>Los Mochis, Sinaloa.</span>
+                        <span>Calle Benjamin Jhonston #1893, Colonia Infonait Bachomo,<br>Los Mochis, Sinaloa.</span>
                     </li>
                     <li class="mb-3">
                         <i class="bi bi-telephone-fill me-3 text-primary fs-5"></i> 
@@ -41,7 +41,7 @@
                 <h5 class="fw-bold text-primary mb-4 text-start">Ubicación</h5>
                 <div class="shadow-sm overflow-hidden" style="border-radius: 15px;">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.332306730325!2d-108.9961626!3d25.7951261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ3JzQyLjUiTiAxMDjCsDU5JzQ2LjIiVw!5e0!3m2!1ses!2smx!4v1700000000000" 
+                        src="https://maps.app.goo.gl/Fvkss2kL1wvKb43F6" 
                         width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
