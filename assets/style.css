@@ -166,3 +166,47 @@ footer {
         justify-content: center;
     }
 }
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float span {
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+/* Ocultar texto en pantallas muy pequeñas para que solo quede el icono */
+@media (max-width: 768px) {
+    .whatsapp-float span {
+        display: none;
+    }
+    .whatsapp-float {
+        padding: 15px;
+        border-radius: 50%;
+        bottom: 20px;
+        right: 20px;
+    }
+}
