@@ -211,28 +211,36 @@ main {
     text-transform: uppercase;
 }
 
-/* Números de los días (Forzamos visibilidad) */
+/* --- AJUSTE DE VISIBILIDAD DE NÚMEROS --- */
+
+/* Forzamos que el número del día siempre sea visible */
+.fc .fc-daygrid-day-top {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: inherit !important;
+    z-index: 5 !important; /* Lo ponemos por encima del fondo gris */
+}
+
 .fc .fc-daygrid-day-number {
+    color: #212529 !important; /* Negro Bootstrap, muy legible */
+    font-weight: 700 !important; /* Negrita extra */
+    font-size: 1rem !important;
     padding: 8px 12px !important;
-    font-weight: 700 !important;
-    color: #333333 !important; /* Gris oscuro casi negro */
     text-decoration: none !important;
-    position: relative !important;
-    display: inline-block !important;
-    opacity: 1 !important; /* Que no se transparente */
+    opacity: 1 !important; /* Cero transparencia */
 }
 
-/* Días Pasados */
+/* Días pasados: fondo gris muy suave para que el número resalte */
 .fc-day-past {
-    background-color: #f2f2f2 !important; /* Un gris un poco más marcado */
+    background-color: #eeeeee !important; 
 }
 
-/* El número en días pasados (un poco más suave pero legible) */
+/* El número en días pasados (un poco menos intenso pero totalmente legible) */
 .fc-day-past .fc-daygrid-day-number {
-    color: #888888 !important; 
+    color: #555555 !important; 
 }
 
-/* Día de Hoy (El círculo azul) */
+/* Día de hoy: Número blanco sobre círculo azul */
 .fc-day-today .fc-daygrid-day-number {
     background-color: #007bff !important;
     color: #ffffff !important;
@@ -243,6 +251,7 @@ main {
     align-items: center !important;
     justify-content: center !important;
     margin: 4px !important;
+    padding: 0 !important; /* Reset de padding para el círculo */
 }
 
 /* Interacción con las celdas */
