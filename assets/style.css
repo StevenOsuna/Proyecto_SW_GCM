@@ -8,9 +8,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* Ajuste para que el contenido no quede debajo del navbar fijo */
+/* Eliminamos el padding-top global para que el Hero empiece desde arriba si es necesario, 
+   o lo mantenemos en 80px si el navbar es fixed */
 body {
-    padding-top: 85px; /* Ajustado para que el navbar respire */
+    padding-top: 80px; 
     background-color: #fcfcfc;
 }
 
@@ -29,21 +30,15 @@ main {
     transition: transform 0.3s ease;
 }
 
-.navbar-brand:hover {
-    transform: translateY(-1px);
-}
-
-/* Estilo para el nombre del Doctor */
 .nombre-doctor-nav {
     color: #333 !important;
     font-weight: 700;
 }
 
-/* Estilo para el botón de Inicio a la derecha */
 .boton-inicio-nav {
-    background-color: #007bff !important; /* Azul médico */
+    background-color: #007bff !important;
     color: white !important;
-    border-radius: 50px; /* Bordes redondeados modernos */
+    border-radius: 50px;
     padding: 8px 25px !important;
     font-weight: bold;
     border: none;
@@ -54,92 +49,98 @@ main {
 .boton-inicio-nav:hover {
     background-color: #0056b3 !important;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
 }
 
-/* --- BOTONES ESPECÍFICOS --- */
+/* --- SECCIÓN HERO PRINCIPAL (NUEVA ESTRUCTURA) --- */
+.hero-principal {
+    height: 85vh; /* Ocupa el 85% de la ventana */
+    min-height: 500px;
+    position: relative;
+    /* Degradado oscuro a la izquierda para que el texto blanco se vea perfecto */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.2) 100%), 
+                url('../img/tu-foto-doctor.jpg'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
 
-/* Botón naranja (puedes usar esta clase en el index para "Agendar Cita" si quieres ese color) */
-.btn-naranja {
-    background-color: rgb(241, 161, 14) !important;
+.titulo-principal-hero {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.descripcion-hero {
+    color: #f8f9fa;
+}
+
+/* --- BOTÓN AGENDAR (ESTILO WHATSAPP/MODERNO) --- */
+.btn-agendar-hero {
+    background-color: #25d366 !important; /* Verde éxito/WhatsApp como la foto */
     color: white !important;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.btn-naranja:hover {
-    background-color: rgb(210, 140, 10) !important;
+.btn-agendar-hero:hover {
+    background-color: #128c7e !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
-/* --- SECCIONES (HERO & CONTENIDO) --- */
-
-.titulo-bienvenida {
-    font-size: 4rem; /* Tamaño grande e imponente */
-    font-weight: 800;
-    margin-bottom: 1rem;
-    color: #007bff;
+/* --- SECCIÓN CONÓCENOS (AJUSTADA) --- */
+.seccion-quienes {
+    padding: 80px 0;
+    background-color: #ffffff;
 }
 
 .titulo-quienes {
     font-size: 2.5rem;
-    letter-spacing: 1px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 2rem;
 }
 
-/* Sección azul de Conócenos */
-.hero {
-    border-top: 5px solid #0056b3;
-    padding: 60px 0;
-}
-
-/* Logo Médico en el navbar */
+/* --- OTROS ELEMENTOS --- */
 .medico-logo-icon {
     font-size: 2.8rem;
     color: #007bff;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
-/* --- MODALES --- */
 .modal-content {
     border: none;
     border-radius: 15px;
-    overflow: hidden;
-}
-
-.modal-header {
-    border-bottom: none;
-    padding: 1.5rem;
 }
 
 /* --- FOOTER --- */
 footer {
     background-color: #212529;
     color: #ffffff;
-    font-size: 0.9rem;
     padding: 2rem 0;
-}
-
-.footer h5 {
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: #007bff;
 }
 
 /* --- RESPONSIVIDAD --- */
 @media (max-width: 768px) {
-    .titulo-bienvenida {
-        font-size: 2.5rem;
+    .hero-principal {
+        height: auto;
+        padding: 60px 0;
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('../img/tu-foto-doctor.jpg') center/cover;
     }
-    
-    .navbar-nav {
-        margin-top: 15px;
+
+    .titulo-principal-hero {
+        font-size: 2.2rem;
         text-align: center;
     }
     
-    .boton-inicio-nav {
-        width: 100%;
-        margin-top: 10px;
+    .contenido-hero {
+        text-align: center;
     }
 }
