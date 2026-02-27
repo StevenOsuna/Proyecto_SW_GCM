@@ -21,6 +21,7 @@ main {
 .navbar {
     border-bottom: 2px solid #eee;
     padding: 0.8rem 0;
+    background-color: #ffffff !important;
 }
 
 .navbar-brand {
@@ -90,7 +91,45 @@ main {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
 }
 
+/* --- SECCIÓN CONÓCENOS (HISTORIA FIJA) --- */
+.seccion-quienes {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.titulo-quienes {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 2.5rem;
+}
+
+.historia-fija p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.historia-fija i {
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+.btn-outline-primary.rounded-pill {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary.rounded-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+}
+
 /* --- SECCIÓN SERVICIOS (TARJETAS) --- */
+#servicios {
+    background-color: #f8f9fa !important;
+}
+
 .card-servicio {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 15px;
@@ -108,19 +147,6 @@ main {
     object-fit: cover;
 }
 
-/* --- SECCIÓN CONÓCENOS --- */
-.seccion-quienes {
-    padding: 100px 0;
-    background-color: #ffffff;
-}
-
-.titulo-quienes {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 2.5rem;
-}
-
 /* --- OTROS ELEMENTOS --- */
 .medico-logo-icon {
     font-size: 2.8rem;
@@ -134,11 +160,29 @@ main {
 }
 
 /* --- FOOTER --- */
-footer {
+.footer-medico {
     background-color: #212529;
     color: #ffffff;
     padding: 3rem 0;
-    text-align: center;
+}
+
+.hover-link {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.hover-link:hover {
+    opacity: 1;
+    color: #007bff !important;
+    padding-left: 5px;
+}
+
+.footer-medico i {
+    transition: transform 0.3s ease;
+}
+
+.footer-medico a:hover i {
+    transform: scale(1.2);
 }
 
 /* --- BOTÓN FLOTANTE WHATSAPP --- */
@@ -205,23 +249,4 @@ footer {
         bottom: 20px;
         right: 20px;
     }
-}
-
-.hover-link {
-    transition: all 0.3s ease;
-    opacity: 0.8;
-}
-
-.hover-link:hover {
-    opacity: 1;
-    color: #007bff !important;
-    padding-left: 5px; /* Pequeño efecto de movimiento */
-}
-
-.footer-medico i {
-    transition: transform 0.3s ease;
-}
-
-.footer-medico a:hover i {
-    transform: scale(1.2);
 }
