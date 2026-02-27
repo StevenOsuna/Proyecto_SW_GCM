@@ -26,7 +26,6 @@ if (!isset($_SESSION['usuario_id'])) {
 <body class="bg-light">
 
     <?php 
-    // Definimos el título para la Navbar
     $pageTitle = 'Agendar Cita';
     include 'estructura/navbar.php'; 
     ?>
@@ -54,7 +53,7 @@ if (!isset($_SESSION['usuario_id'])) {
                 <div class="text-center mt-4">
                     <p class="small text-secondary">
                         <i class="bi bi-info-circle me-1"></i> 
-                        Los días marcados en color indican disponibilidad o citas existentes.
+                        Los días en gris no están disponibles para nuevas citas.
                     </p>
                 </div>
             </div>
@@ -71,20 +70,31 @@ if (!isset($_SESSION['usuario_id'])) {
             initialView: 'dayGridMonth',
             locale: 'es',
             height: 'auto',
+            
+            // --- BLOQUEO DE DÍAS PASADOS ---
+            validRange: {
+                start: new Date().toISOString().split('T')[0] 
+            },
+
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth'
             },
-            // Estilización de botones para que combinen con tu azul
             buttonText: {
                 today: 'Hoy'
             },
             events: 'api/obtener_citas.php', 
+            
             dateClick: function(info) {
-                var fecha = info.dateStr;
-                // Redirección profesional con SweetAlert o simple
-                window.location.href = "paciente/horarios.php?fecha=" + fecha;
+                // Solo permite clic si el día no es pasado
+                var hoy = new Date();
+                hoy.setHours(0,0,0,0);
+                var fechaSeleccionada = new Date(info.dateStr + 'T00:00:00');
+
+                if (fechaSeleccionada >= hoy) {
+                    window.location.href = "paciente/horarios.php?fecha=" + info.dateStr;
+                }
             }
         });
 
@@ -93,10 +103,26 @@ if (!isset($_SESSION['usuario_id'])) {
     </script>
 
     <style>
-        :root { --fc-border-color: #f0f0f0; --fc-button-bg-color: #007bff; --fc-button-border-color: #007bff; }
+        :root { 
+            --fc-border-color: #f0f0f0; 
+            --fc-button-bg-color: #007bff; 
+            --fc-button-border-color: #007bff; 
+            --fc-today-bg-color: #e7f1ff;
+        }
         .fc .fc-toolbar-title { font-weight: 700; color: #2c3e50; text-transform: capitalize; }
         .fc .fc-col-header-cell { background: #f8f9fa; padding: 10px 0; }
-        .fc-daygrid-day:hover { background-color: #f0f7ff !important; cursor: pointer; transition: 0.2s; }
+        
+        /* Estilo para días deshabilitados (pasados) */
+        .fc-day-past {
+            background-color: #f5f5f5 !important;
+            opacity: 0.6;
+        }
+        
+        .fc-daygrid-day:hover:not(.fc-day-past) { 
+            background-color: #f0f7ff !important; 
+            cursor: pointer; 
+            transition: 0.2s; 
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
