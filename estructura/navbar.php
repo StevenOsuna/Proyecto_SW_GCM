@@ -1,9 +1,19 @@
 <?php
-// Configuración de rutas dinámicas
-$base_path = (dirname($_SERVER['PHP_SELF']) == '/' || dirname($_SERVER['PHP_SELF']) == '\\') ? '' : '../';
+// 1. IMPORTANTE: Esto debe estar aquí para que el menú reconozca al usuario
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 2. Ajuste dinámico de rutas según tu estructura de carpetas
+$current_dir = basename(dirname($_SERVER['PHP_SELF']));
+
+// Si estás dentro de 'paciente', 'auth', 'admin' o 'estructura', necesitas subir un nivel
+$base_path = ($current_dir == 'paciente' || $current_dir == 'auth' || $current_dir == 'admin' || $current_dir == 'estructura') ? '../' : '';
+
+// Si estás en el index principal, la ruta base es vacía
 if (basename($_SERVER['PHP_SELF']) == 'index.php') { $base_path = ''; }
 
-// Verificamos si el usuario ya entró al sistema
+// 3. Verificamos la sesión (asegúrate que en tu login uses exactamente este nombre)
 $sesion_activa = isset($_SESSION['usuario_id']);
 ?>
 
@@ -31,7 +41,7 @@ $sesion_activa = isset($_SESSION['usuario_id']);
                         </a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a href="<?php echo $base_path; ?>logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+                        <a href="<?php echo $base_path; ?>config/logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3 fw-bold">
                             Salir
                         </a>
                     </li>
@@ -41,10 +51,10 @@ $sesion_activa = isset($_SESSION['usuario_id']);
                         <a href="<?php echo $base_path; ?>index.php" class="nav-link fw-bold text-primary">Inicio</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a href="<?php echo $base_path; ?>#quienes-somos" class="nav-link fw-bold text-dark small">¿Quiénes somos?</a>
+                        <a href="<?php echo $base_path; ?>index.php#quienes-somos" class="nav-link fw-bold text-dark small">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a href="<?php echo $base_path; ?>#servicios" class="nav-link fw-bold text-dark small">Servicios</a>
+                        <a href="<?php echo $base_path; ?>index.php#servicios" class="nav-link fw-bold text-dark small">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo $base_path; ?>auth/login.php" class="btn btn-outline-primary rounded-pill px-4 me-2 fw-bold">Iniciar Sesión</a>
