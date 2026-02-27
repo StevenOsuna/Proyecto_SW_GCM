@@ -8,8 +8,7 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* Eliminamos el padding-top global para que el Hero empiece desde arriba si es necesario, 
-   o lo mantenemos en 80px si el navbar es fixed */
+/* El padding-top evita que el contenido se esconda bajo el navbar fijo */
 body {
     padding-top: 80px; 
     background-color: #fcfcfc;
@@ -51,18 +50,22 @@ main {
     transform: scale(1.05);
 }
 
-/* --- SECCIÓN HERO PRINCIPAL (NUEVA ESTRUCTURA) --- */
+/* --- NUEVA SECCIÓN HERO PRINCIPAL --- */
 .hero-principal {
-    height: 85vh; /* Ocupa el 85% de la ventana */
-    min-height: 500px;
+    height: 90vh; /* Ocupa casi todo el alto de la pantalla */
     position: relative;
-    /* Degradado oscuro a la izquierda para que el texto blanco se vea perfecto */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.2) 100%), 
-                url('../img/tu-foto-doctor.jpg'); /* Asegúrate de que la ruta sea correcta */
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
+    
+    /* degradado oscuro para que el texto blanco sea legible */
+    /* USAMOS ../doctor.jpg PORQUE LA IMAGEN ESTÁ FUERA DE ASSETS */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 100%), 
+                url('../doctor.jpg') center/cover no-repeat;
+}
+
+/* Contenedor del texto para darles sombra y separarlos */
+.contenido-hero {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
 .titulo-principal-hero {
@@ -75,26 +78,32 @@ main {
 
 .descripcion-hero {
     color: #f8f9fa;
+    margin-bottom: 2rem;
 }
 
-/* --- BOTÓN AGENDAR (ESTILO WHATSAPP/MODERNO) --- */
+/* --- BOTÓN AGENDAR (Estilo como el de tu referencia) --- */
 .btn-agendar-hero {
-    background-color: #25d366 !important; /* Verde éxito/WhatsApp como la foto */
+    background-color: #25d366 !important; /* Verde vibrante */
     color: white !important;
     border: none;
     padding: 15px 40px;
     font-size: 1.2rem;
     font-weight: bold;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
     transition: all 0.3s ease;
+    text-transform: none;
+    text-decoration: none;
 }
 
 .btn-agendar-hero:hover {
     background-color: #128c7e !important;
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
 }
 
-/* --- SECCIÓN CONÓCENOS (AJUSTADA) --- */
+/* --- SECCIÓN CONÓCENOS --- */
 .seccion-quienes {
     padding: 80px 0;
     background-color: #ffffff;
@@ -124,15 +133,16 @@ footer {
     background-color: #212529;
     color: #ffffff;
     padding: 2rem 0;
+    text-align: center;
 }
 
-/* --- RESPONSIVIDAD --- */
+/* --- RESPONSIVIDAD (Celulares) --- */
 @media (max-width: 768px) {
     .hero-principal {
         height: auto;
-        padding: 60px 0;
+        padding: 100px 0;
         background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('../img/tu-foto-doctor.jpg') center/cover;
+                    url('../doctor.jpg') center/cover;
     }
 
     .titulo-principal-hero {
