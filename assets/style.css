@@ -211,34 +211,38 @@ main {
     text-transform: uppercase;
 }
 
-/* Números de los días */
+/* Números de los días (Forzamos visibilidad) */
 .fc .fc-daygrid-day-number {
-    padding: 8px 12px;
-    font-weight: 600;
-    color: #444 !important;
+    padding: 8px 12px !important;
+    font-weight: 700 !important;
+    color: #333333 !important; /* Gris oscuro casi negro */
     text-decoration: none !important;
+    position: relative !important;
+    display: inline-block !important;
+    opacity: 1 !important; /* Que no se transparente */
 }
 
 /* Días Pasados */
 .fc-day-past {
-    background-color: #fafafa !important;
+    background-color: #f2f2f2 !important; /* Un gris un poco más marcado */
 }
 
+/* El número en días pasados (un poco más suave pero legible) */
 .fc-day-past .fc-daygrid-day-number {
-    color: #bbb !important;
+    color: #888888 !important; 
 }
 
-/* Resalte del día de Hoy */
+/* Día de Hoy (El círculo azul) */
 .fc-day-today .fc-daygrid-day-number {
-    background-color: #007bff;
-    color: white !important;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
+    background-color: #007bff !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 4px !important;
 }
 
 /* Interacción con las celdas */
