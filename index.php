@@ -17,30 +17,41 @@
 ?>
 
 <main>
-    <header class="bg-light p-5 text-center border-bottom">
-        <div class="container py-5">
-            <h1 class="titulo-bienvenida text-primary">Bienvenidos</h1>
-            <p class="lead fs-4">Atención médica profesional y de calidad para toda la familia.</p>
-            <div class="mt-4">
-                <a href="auth/login.php" class="btn btn-primary btn-lg px-5 shadow-sm">
-                    <i class="bi bi-calendar-check me-2"></i>Agendar Cita
-                </a>
+    <section class="hero-principal d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-lg-6 text-white contenido-hero">
+                    
+                    <h1 class="display-4 fw-bold mb-4 titulo-principal-hero">
+                        Atención médica profesional y de calidad para toda la familia.
+                    </h1>
+
+                    <div class="mb-5 descripcion-hero">
+                        <h2 class="h3 fw-semibold mb-3">Tratamientos y servicios</h2>
+                        <p class="fs-5 lh-base">
+                            Ofrezco atención <strong>integral</strong> para el <strong>diagnóstico, control y seguimiento</strong> de enfermedades.
+                        </p>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="auth/login.php" class="btn btn-agendar-hero btn-lg rounded-pill px-5 py-3 shadow-lg">
+                            <i class="bi bi-calendar-check me-2"></i>Agendar Cita
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="hero d-flex align-items-center justify-content-center text-center py-5" id="conocenos" 
-             style="background: linear-gradient(rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.5)), 
-                    url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; min-height: 400px;">
-        
-        <div class="container">
-            <h1 class="titulo-quienes fw-bold text-white mb-4">¿Quiénes Somos?</h1>
+    <section class="py-5 seccion-quienes" id="conocenos">
+        <div class="container text-center">
+            <h2 class="titulo-quienes fw-bold text-primary mb-5">¿Quiénes Somos?</h2>
             
             <div class="d-flex flex-wrap justify-content-center gap-3">
-                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
-                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
-                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
-                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
             </div>
         </div>
     </section>
