@@ -172,3 +172,70 @@ main {
     .whatsapp-float span { display: none; }
     .whatsapp-float { padding: 15px; border-radius: 50%; }
 }
+
+/* --- 9. AJUSTES PARA FULLCALENDAR (AGENDAR CITA) --- */
+
+/* Contenedor principal del calendario */
+.fc {
+    --fc-border-color: #f0f0f0;
+    --fc-today-bg-color: #f0f7ff;
+    --fc-button-bg-color: #007bff;
+    --fc-button-border-color: #007bff;
+    --fc-button-hover-bg-color: #0056b3;
+    --fc-button-active-bg-color: #004a9b;
+    font-family: inherit;
+}
+
+/* Título del mes (ej. Febrero 2026) */
+.fc .fc-toolbar-title {
+    font-size: 1.6rem !important;
+    font-weight: 800;
+    color: #2c3e50;
+    text-transform: capitalize;
+}
+
+/* Estilo de los botones (Hoy, Flechas) */
+.fc .fc-button {
+    border-radius: 12px !important;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+/* Cabecera de los días (Lun, Mar, Mié...) */
+.fc .fc-col-header-cell {
+    padding: 12px 0;
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+/* Celdas de los días */
+.fc-daygrid-day {
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto hover en los días (Igual que tus tarjetas) */
+.fc-daygrid-day:hover {
+    background-color: #f0f7ff !important;
+    cursor: pointer;
+}
+
+/* Número del día dentro de la celda */
+.fc .fc-daygrid-day-number {
+    padding: 10px;
+    font-weight: 600;
+    color: #495057;
+    text-decoration: none;
+}
+
+/* Eventos (Citas ya ocupadas) */
+.fc-event {
+    border-radius: 6px !important;
+    padding: 2px 5px;
+    font-size: 0.85rem;
+    border: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
