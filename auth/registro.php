@@ -15,7 +15,7 @@
 
     <?php 
     $pageTitle = "Registro";
-    // El navbar ya contiene el botón de "Inicio" que corregimos
+    // El navbar ya contiene el botón de "Inicio" que configuramos
     include '../estructura/navbar.php'; 
     ?>
 
@@ -31,7 +31,7 @@
                                 <i class="bi bi-person-plus-fill display-4 text-primary"></i>
                             </div>
                             <h2 class="fw-bold">Crear Cuenta</h2>
-                            <p class="text-muted">Complete sus datos para registrarse</p>
+                            <p class="text-muted small">Regístrate para gestionar tus citas médicas</p>
                         </div>
 
                         <form action="../guardar_usuario.php" method="POST">
