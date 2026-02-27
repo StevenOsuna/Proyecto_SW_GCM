@@ -1,10 +1,10 @@
 <?php
-// Detectamos la ruta base para que los enlaces no se rompan
+// Configuración de rutas dinámicas
 $base_path = (dirname($_SERVER['PHP_SELF']) == '/' || dirname($_SERVER['PHP_SELF']) == '\\') ? '' : '../';
 if (basename($_SERVER['PHP_SELF']) == 'index.php') { $base_path = ''; }
 
-// Verificamos si hay una sesión activa
-$usuario_logueado = isset($_SESSION['usuario_id']);
+// Verificamos si el usuario ya entró al sistema
+$sesion_activa = isset($_SESSION['usuario_id']);
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
@@ -16,7 +16,7 @@ $usuario_logueado = isset($_SESSION['usuario_id']);
                 <small class="text-muted lh-1 mt-1" style="font-size: 0.8rem; letter-spacing: 0.5px;">Médico General</small>
             </div>
         </a>
-             
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span> 
         </button> 
@@ -24,20 +24,23 @@ $usuario_logueado = isset($_SESSION['usuario_id']);
         <div class="collapse navbar-collapse justify-content-end" id="menu">
             <ul class="navbar-nav align-items-center">
                 
-                <li class="nav-item me-3">
-                    <a href="<?php echo $base_path; ?>index.php" class="nav-link fw-bold text-primary">
-                        <i class="bi bi-house-door-fill me-1"></i> Inicio
-                    </a>
-                </li>
-
-                <?php if ($usuario_logueado): ?>
+                <?php if ($sesion_activa): ?>
                     <li class="nav-item">
-                        <a href="<?php echo $base_path; ?>logout.php" class="btn btn-outline-danger rounded-pill px-4 fw-bold shadow-sm">
-                            <i class="bi bi-box-arrow-right me-1"></i> Salir
+                        <a href="<?php echo $base_path; ?>index.php" class="nav-link fw-bold text-primary d-flex align-items-center">
+                            <i class="bi bi-house-fill me-2"></i> Inicio
                         </a>
                     </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="<?php echo $base_path; ?>logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+                            Salir
+                        </a>
+                    </li>
+
                 <?php else: ?>
-                    <li class="nav-item me-2">
+                    <li class="nav-item me-3">
+                        <a href="<?php echo $base_path; ?>index.php" class="nav-link fw-bold text-primary">Inicio</a>
+                    </li>
+                    <li class="nav-item me-3">
                         <a href="<?php echo $base_path; ?>#quienes-somos" class="nav-link fw-bold text-dark small">¿Quiénes somos?</a>
                     </li>
                     <li class="nav-item me-3">
