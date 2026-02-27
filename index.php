@@ -50,7 +50,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm border-0 card-servicio">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dad99962?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Medicina General">
+                        <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Medicina General">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-primary"><i class="bi bi-stethoscope me-2"></i>Medicina General</h5>
                             <p class="card-text text-muted">Diagnóstico y tratamiento de enfermedades agudas y crónicas (infecciones, dolor, malestares).</p>
@@ -80,7 +80,7 @@
 
                 <div class="col-md-6 col-lg-6">
                     <div class="card h-100 shadow-sm border-0 card-servicio">
-                        <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee1?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Salud Mental" style="height: 250px;">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Salud Mental" style="height: 250px;">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-primary"><i class="bi bi-brain me-2"></i>Salud Mental</h5>
                             <p class="card-text text-muted">Evaluación primaria de ansiedad, depresión y estrés con un enfoque en la atención integral y humana.</p>
