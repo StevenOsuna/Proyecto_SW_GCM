@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// Validamos sesión - Basado en tu estructura de carpetas
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: auth/login.php");
     exit();
@@ -10,7 +8,6 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +15,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="assets/style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
@@ -50,11 +48,9 @@ if (!isset($_SESSION['usuario_id'])) {
                     </div>
                 </div>
 
-                <div class="text-center mt-4">
-                    <p class="small text-secondary">
-                        <i class="bi bi-info-circle me-1"></i> 
-                        Los días en gris no están disponibles para nuevas citas.
-                    </p>
+                <div class="text-center mt-4 text-secondary small">
+                    <i class="bi bi-info-circle me-1"></i> 
+                    Hoy es <?php echo date('d/m/Y'); ?>. Los días pasados están deshabilitados.
                 </div>
             </div>
         </div>
@@ -70,24 +66,17 @@ if (!isset($_SESSION['usuario_id'])) {
             initialView: 'dayGridMonth',
             locale: 'es',
             height: 'auto',
-            
-            // --- BLOQUEO DE DÍAS PASADOS ---
             validRange: {
                 start: new Date().toISOString().split('T')[0] 
             },
-
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth'
             },
-            buttonText: {
-                today: 'Hoy'
-            },
+            buttonText: { today: 'Hoy' },
             events: 'api/obtener_citas.php', 
-            
             dateClick: function(info) {
-                // Solo permite clic si el día no es pasado
                 var hoy = new Date();
                 hoy.setHours(0,0,0,0);
                 var fechaSeleccionada = new Date(info.dateStr + 'T00:00:00');
@@ -101,29 +90,6 @@ if (!isset($_SESSION['usuario_id'])) {
         calendar.render();
     });
     </script>
-
-    <style>
-        :root { 
-            --fc-border-color: #f0f0f0; 
-            --fc-button-bg-color: #007bff; 
-            --fc-button-border-color: #007bff; 
-            --fc-today-bg-color: #e7f1ff;
-        }
-        .fc .fc-toolbar-title { font-weight: 700; color: #2c3e50; text-transform: capitalize; }
-        .fc .fc-col-header-cell { background: #f8f9fa; padding: 10px 0; }
-        
-        /* Estilo para días deshabilitados (pasados) */
-        .fc-day-past {
-            background-color: #f5f5f5 !important;
-            opacity: 0.6;
-        }
-        
-        .fc-daygrid-day:hover:not(.fc-day-past) { 
-            background-color: #f0f7ff !important; 
-            cursor: pointer; 
-            transition: 0.2s; 
-        }
-    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
