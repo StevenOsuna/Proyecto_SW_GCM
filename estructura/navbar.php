@@ -1,12 +1,10 @@
 <?php
-// 1. Detectamos la profundidad de la carpeta para ajustar las rutas
-// Si estamos en una subcarpeta (auth, pacientes), necesitamos "../" para volver a la raíz
+// Detectamos la ruta base para que los enlaces no se rompan
 $base_path = (dirname($_SERVER['PHP_SELF']) == '/' || dirname($_SERVER['PHP_SELF']) == '\\') ? '' : '../';
+if (basename($_SERVER['PHP_SELF']) == 'index.php') { $base_path = ''; }
 
-// Si estamos específicamente en index.php, la ruta es vacía
-if (basename($_SERVER['PHP_SELF']) == 'index.php') {
-    $base_path = '';
-}
+// Verificamos si hay una sesión activa
+$usuario_logueado = isset($_SESSION['usuario_id']);
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
@@ -32,18 +30,19 @@ if (basename($_SERVER['PHP_SELF']) == 'index.php') {
                     </a>
                 </li>
 
-                <?php 
-                // Si el usuario tiene sesión activa (como Duma)
-                if (isset($_SESSION['usuario_id'])): ?>
+                <?php if ($usuario_logueado): ?>
                     <li class="nav-item">
-                        <a href="<?php echo $base_path; ?>logout.php" class="btn btn-outline-danger rounded-pill px-4 shadow-sm fw-bold">
-                            <i class="bi bi-box-arrow-right me-1"></i> Cerrar Sesión
+                        <a href="<?php echo $base_path; ?>logout.php" class="btn btn-outline-danger rounded-pill px-4 fw-bold shadow-sm">
+                            <i class="bi bi-box-arrow-right me-1"></i> Salir
                         </a>
                     </li>
-
-                <?php 
-                // Si NO hay sesión y NO estamos ya en Login/Registro
-                elseif ($pageTitle !== 'Login' && $pageTitle !== 'Registro' && $pageTitle !== 'Login ADMIN'): ?>
+                <?php else: ?>
+                    <li class="nav-item me-2">
+                        <a href="<?php echo $base_path; ?>#quienes-somos" class="nav-link fw-bold text-dark small">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a href="<?php echo $base_path; ?>#servicios" class="nav-link fw-bold text-dark small">Servicios</a>
+                    </li>
                     <li class="nav-item">
                         <a href="<?php echo $base_path; ?>auth/login.php" class="btn btn-outline-primary rounded-pill px-4 me-2 fw-bold">Iniciar Sesión</a>
                     </li> 
