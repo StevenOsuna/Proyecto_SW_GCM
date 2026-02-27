@@ -127,5 +127,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<a href="https://wa.me/6681692524?text=Hola%20Dr.%20Diego,%20me%20gustaría%20agendar%20una%20cita" 
+   class="whatsapp-float" 
+   target="_blank">
+    <i class="bi bi-whatsapp"></i>
+    <span>¡Escríbenos!</span>
+</a>
+
 </body>
 </html>
