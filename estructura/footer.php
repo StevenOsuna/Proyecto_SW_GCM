@@ -6,7 +6,7 @@
                 <ul class="list-unstyled">
                     <li class="mb-3 d-flex align-items-start">
                         <i class="bi bi-geo-alt-fill me-3 text-primary fs-5"></i> 
-                        <span>Calle Benjamin Jhonston #1893, Colonia Infonait Bachomo,<br>Los Mochis, Sinaloa.</span>
+                        <span>Calle Benjamin Jhonston #1893, Colonia Infonavit Bachomo.<br>Los Mochis, Sinaloa.</span>
                     </li>
                     <li class="mb-3">
                         <i class="bi bi-telephone-fill me-3 text-primary fs-5"></i> 
