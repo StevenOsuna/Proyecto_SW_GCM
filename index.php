@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Diego Rojas</title>
+    <title>Dr. Diego Rojas - Médico General</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
@@ -11,144 +11,109 @@
 
 <body>
 
-<?php $pageTitle = "Inicio";
-include 'estructura/navbar.php';
+<?php 
+    $pageTitle = "Inicio";
+    include 'estructura/navbar.php'; 
 ?>
 
 <main>
-<header class="bg-light p-5 text-center">
-    <h1 class="titulo-bienvenida">Bienvenidos</h1>
-    <p>Atención médica profesional y de calidad</p>
-    <a href="auth/login.php" class="btn btn-primary">Agendar Cita</a>
-</header>
+    <header class="bg-light p-5 text-center border-bottom">
+        <div class="container py-5">
+            <h1 class="titulo-bienvenida text-primary">Bienvenidos</h1>
+            <p class="lead fs-4">Atención médica profesional y de calidad para toda la familia.</p>
+            <div class="mt-4">
+                <a href="auth/login.php" class="btn btn-primary btn-lg px-5 shadow-sm">
+                    <i class="bi bi-calendar-check me-2"></i>Agendar Cita
+                </a>
+            </div>
+        </div>
+    </header>
 
-
-
-
-<!-- seccion conocenos -->
-<section class="hero d-flex align-items-center justify-content-center text-center" id="conocenos" style="
-           background: linear-gradient(#007bff, #007bff74)
-           center/cover no-repeat;">
-    <div class="container flex-column align-items-start m-5">
-        <h1 class="titulo-quienes fw-bold text-white">¿Quiénes Somos?</h1>
-
-        <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</a>
-        <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</a>
-        <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</a>
-        <a class="btn btn-primary mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</a>
-
-    </div>
+    <section class="hero d-flex align-items-center justify-content-center text-center py-5" id="conocenos" 
+             style="background: linear-gradient(rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.5)), 
+                    url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; min-height: 400px;">
+        
+        <div class="container">
+            <h1 class="titulo-quienes fw-bold text-white mb-4">¿Quiénes Somos?</h1>
+            
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
+                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
+                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
+                <button class="btn btn-light fw-bold px-4 py-2" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
+            </div>
+        </div>
     </section>
 </main>
-<!--Footer -->
-<?php include 'estructura/footer.php'; ?> 
 
-</body>
+<?php include 'estructura/footer.php'; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</html>
-
-
-<!--Modales de la secccion conocenos -->
-<!--Modal Historia-->
 <div class="modal fade" id="modalHistoria" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Nuestra Historia</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <h5 class="modal-title"><i class="bi bi-book me-2"></i>Nuestra Historia</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body text-center">
-            <i class="bi bi-hospital-fill text-primary" style="font-size: 3rem;"></i>
-
-             <p class="fs-5 mt-3">
-             Nuestro consultorio médico nació con el propósito de brindar atención
-             médica accesible, profesional y humana a la comunidad. Desde nuestros
-            inicios, nos hemos enfocado en ofrecer un servicio basado en la confianza,
-             el respeto y la ética profesional.
-            </p>
-
-            <p class="fs-5">
-            A lo largo de los años, hemos crecido gracias a la preferencia de nuestros
-            pacientes, incorporando mejores prácticas médicas y fortaleciendo nuestro
-            compromiso con la salud y el bienestar integral. Cada consulta representa
-             para nosotros la oportunidad de servir con dedicación y responsabilidad.
-            </p>
-
-            <p class="fs-5">
-            Hoy continuamos trabajando con la misma vocación que nos dio origen:
-            cuidar la salud de cada persona con profesionalismo, calidez y compromiso.
-            </p>
-        </div>
+            <div class="modal-body text-center p-4">
+                <i class="bi bi-hospital-fill text-primary" style="font-size: 3rem;"></i>
+                <p class="fs-5 mt-3">Nuestro consultorio médico nació con el propósito de brindar atención médica accesible, profesional y humana a la comunidad.</p>
+                <p class="fs-5 text-muted">Hoy continuamos trabajando con la misma vocación que nos dio origen: cuidar la salud de cada persona con profesionalismo, calidez y compromiso.</p>
+            </div>
         </div>
     </div>
 </div>
 
-<!--Modal Mision-->
 <div class="modal fade" id="modalMision" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Misión</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <h5 class="modal-title"><i class="bi bi-heart-pulse me-2"></i>Misión</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body text-center">
-            <i class="bi bi-heart-pulse-fill text-primary" style="font-size: 3rem;"></i>
-            <p class="fs-5 mt-3">
-                Nuestra misión es brindar atención médica integral, profesional y humanizada,
-            enfocada en la prevención, diagnóstico y tratamiento oportuno de nuestros pacientes.
-            Nos comprometemos a ofrecer un servicio de calidad, basado en principios éticos,
-            respeto, empatía y responsabilidad, utilizando tecnología adecuada y personal
-            capacitado para garantizar el bienestar y la salud de la comunidad.
-    </p>
-</div>
+            <div class="modal-body text-center p-4">
+                <i class="bi bi-bullseye text-primary" style="font-size: 3rem;"></i>
+                <p class="fs-5 mt-3">Brindar atención médica integral, profesional y humanizada, enfocada en la prevención, diagnóstico y tratamiento oportuno.</p>
             </div>
         </div>
     </div>
 </div>
 
-<!--Modal Vision-->
 <div class="modal fade" id="modalVision" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Visión</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <h5 class="modal-title"><i class="bi bi-eye me-2"></i>Visión</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body text-center">
-             <i class="bi bi-eye-fill text-primary" style="font-size: 3rem;"></i>
-
-            <p class="fs-5 mt-3">
-                 Nuestra visión es consolidarnos como un consultorio médico de referencia
-                en la comunidad, reconocido por la excelencia en el servicio, la calidad
-                profesional y el trato humano hacia nuestros pacientes. Aspiramos a
-                crecer continuamente, incorporando innovación y mejores prácticas
-                médicas que contribuyan al bienestar integral de quienes confían en nosotros.
-    </p>
-</div>
+            <div class="modal-body text-center p-4">
+                <i class="bi bi-graph-up-arrow text-primary" style="font-size: 3rem;"></i>
+                <p class="fs-5 mt-3">Consolidarnos como un consultorio médico de referencia, reconocido por la excelencia en el servicio y el trato humano.</p>
+            </div>
         </div>
     </div>
 </div>
 
-<!--Modal Valores-->
 <div class="modal fade" id="modalValores" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title">Valores</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <h5 class="modal-title"><i class="bi bi-star me-2"></i>Nuestros Valores</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body text-center">
-                 <i class="bi bi-heart-fill text-primary" style="font-size: 3rem;"></i>
-
-                <ul class="list-unstyled fs-5 mt-3">
-                <li><strong>Ética:</strong> Actuamos con honestidad y responsabilidad profesional.</li>
-                 <li><strong>Empatía:</strong> Escuchamos y comprendemos las necesidades de nuestros pacientes.</li>
-                <li><strong>Compromiso:</strong> Brindamos atención oportuna y de calidad.</li>
-                <li><strong>Respeto:</strong> Tratamos a cada persona con dignidad y calidez.</li>
-                <li><strong>Profesionalismo:</strong> Nos mantenemos en constante actualización médica.</li>
-                 </ul>
+            <div class="modal-body p-4">
+                <ul class="list-group list-group-flush fs-5">
+                    <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Ética:</strong> Honestidad profesional.</li>
+                    <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Empatía:</strong> Comprendemos al paciente.</li>
+                    <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Compromiso:</strong> Atención de calidad.</li>
+                    <li class="list-group-item"><i class="bi bi-check2-circle text-primary me-2"></i><strong>Respeto:</strong> Dignidad y calidez.</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
