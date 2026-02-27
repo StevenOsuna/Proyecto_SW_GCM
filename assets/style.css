@@ -239,3 +239,77 @@ main {
     border: none !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* --- 9. CALENDARIO (FullCalendar) --- */
+
+:root { 
+    --fc-border-color: #f0f0f0; 
+    --fc-button-bg-color: #007bff; 
+    --fc-button-border-color: #007bff; 
+    --fc-today-bg-color: #f0f7ff;
+}
+
+/* Título y Cabecera */
+.fc .fc-toolbar-title { 
+    font-weight: 700; 
+    color: #2c3e50; 
+    text-transform: capitalize; 
+}
+
+.fc .fc-col-header-cell { 
+    background: #f8f9fa; 
+    padding: 12px 0; 
+    border-bottom: 2px solid #eee; 
+}
+
+.fc .fc-col-header-cell-cushion { 
+    color: #007bff; 
+    text-decoration: none; 
+    font-weight: 800; 
+}
+
+/* Estilo de los Números de los Días */
+.fc .fc-daygrid-day-number {
+    padding: 8px 12px;
+    font-weight: 600;
+    color: #444 !important;
+    text-decoration: none !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Días Pasados (Deshabilitados) */
+.fc-day-past {
+    background-color: #fafafa !important;
+}
+
+.fc-day-past .fc-daygrid-day-number {
+    color: #bbb !important; /* Número visible pero tenue */
+}
+
+/* Día de Hoy con Círculo Azul */
+.fc-day-today .fc-daygrid-day-number {
+    background-color: #007bff;
+    color: white !important;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+/* Efecto Hover solo en días activos */
+.fc-daygrid-day:hover:not(.fc-day-past) { 
+    background-color: #f0f7ff !important; 
+    cursor: pointer; 
+    transition: 0.2s ease; 
+}
+
+/* Botones del Calendario */
+.fc .fc-button-primary {
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
