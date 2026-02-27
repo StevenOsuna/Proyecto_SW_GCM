@@ -169,6 +169,19 @@ main {
     color: #495057;
 }
 
+/* --- ESTADO DE REGISTRO (ÉXITO / ERROR) --- */
+.card-estado {
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+}
+
+.icono-estado-gigante {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
 /* --- OTROS ELEMENTOS --- */
 .medico-logo-icon {
     font-size: 2.8rem;
