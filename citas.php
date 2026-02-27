@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Validamos sesión
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: auth/login.php");
     exit();
@@ -50,7 +51,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 <div class="text-center mt-4 text-secondary small">
                     <i class="bi bi-info-circle me-1"></i> 
-                    Hoy es <?php echo date('d/m/Y'); ?>. Los días pasados están deshabilitados.
+                    Hoy es <?php echo date('d/m/Y'); ?>. Los días en gris no están disponibles.
                 </div>
             </div>
         </div>
@@ -66,21 +67,57 @@ if (!isset($_SESSION['usuario_id'])) {
             initialView: 'dayGridMonth',
             locale: 'es',
             height: 'auto',
+            
+            // Bloquea días anteriores a hoy
             validRange: {
                 start: new Date().toISOString().split('T')[0] 
             },
+
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth'
             },
             buttonText: { today: 'Hoy' },
+            
+            // Origen de los datos
             events: 'api/obtener_citas.php', 
+
+            // --- SOLUCIÓN DE FUERZA BRUTA PARA VISIBILIDAD ---
+            dayCellDidMount: function(info) {
+                // Seleccionamos el elemento del número del día
+                var numberEl = info.el.querySelector('.fc-daygrid-day-number');
+                
+                if (numberEl) {
+                    // 1. Aseguramos que el número sea negro y visible siempre
+                    numberEl.style.color = '#212529'; 
+                    numberEl.style.fontWeight = '700';
+                    numberEl.style.zIndex = '10';
+                    numberEl.style.position = 'relative';
+                }
+
+                // 2. Si el día es pasado, forzamos el gris de fondo
+                if (info.isPast) {
+                    info.el.style.backgroundColor = '#f2f2f2';
+                    if (numberEl) {
+                        numberEl.style.color = '#999999'; // Número un poco más suave en el pasado
+                    }
+                }
+
+                // 3. Si es hoy, el número debe ser blanco para resaltar sobre el círculo azul del CSS
+                if (info.isToday) {
+                    if (numberEl) {
+                        numberEl.style.color = '#ffffff';
+                    }
+                }
+            },
+
             dateClick: function(info) {
                 var hoy = new Date();
                 hoy.setHours(0,0,0,0);
                 var fechaSeleccionada = new Date(info.dateStr + 'T00:00:00');
 
+                // Solo redirigir si es hoy o futuro
                 if (fechaSeleccionada >= hoy) {
                     window.location.href = "paciente/horarios.php?fecha=" + info.dateStr;
                 }
