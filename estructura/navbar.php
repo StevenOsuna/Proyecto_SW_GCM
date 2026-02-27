@@ -1,20 +1,16 @@
 <?php
-// 1. IMPORTANTE: Esto debe estar aquí para que el menú reconozca al usuario
+// Aseguramos que la sesión esté activa para leer los datos
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// 2. Ajuste dinámico de rutas según tu estructura de carpetas
+// Detectar ruta base según tu estructura de carpetas
 $current_dir = basename(dirname($_SERVER['PHP_SELF']));
-
-// Si estás dentro de 'paciente', 'auth', 'admin' o 'estructura', necesitas subir un nivel
-$base_path = ($current_dir == 'paciente' || $current_dir == 'auth' || $current_dir == 'admin' || $current_dir == 'estructura') ? '../' : '';
-
-// Si estás en el index principal, la ruta base es vacía
+$base_path = ($current_dir == 'paciente' || $current_dir == 'auth' || $current_dir == 'config') ? '../' : '';
 if (basename($_SERVER['PHP_SELF']) == 'index.php') { $base_path = ''; }
 
-// 3. Verificamos la sesión (asegúrate que en tu login uses exactamente este nombre)
-$sesion_activa = isset($_SESSION['usuario_id']);
+// Verificamos si hay alguien logueado (intentamos con varios nombres comunes por si acaso)
+$sesion_activa = isset($_SESSION['usuario_id']) || isset($_SESSION['id']) || isset($_SESSION['usuario_nombre']);
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
@@ -26,10 +22,6 @@ $sesion_activa = isset($_SESSION['usuario_id']);
                 <small class="text-muted lh-1 mt-1" style="font-size: 0.8rem; letter-spacing: 0.5px;">Médico General</small>
             </div>
         </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-            <span class="navbar-toggler-icon"></span> 
-        </button> 
 
         <div class="collapse navbar-collapse justify-content-end" id="menu">
             <ul class="navbar-nav align-items-center">
@@ -49,12 +41,6 @@ $sesion_activa = isset($_SESSION['usuario_id']);
                 <?php else: ?>
                     <li class="nav-item me-3">
                         <a href="<?php echo $base_path; ?>index.php" class="nav-link fw-bold text-primary">Inicio</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a href="<?php echo $base_path; ?>index.php#quienes-somos" class="nav-link fw-bold text-dark small">¿Quiénes somos?</a>
-                    </li>
-                    <li class="nav-item me-3">
-                        <a href="<?php echo $base_path; ?>index.php#servicios" class="nav-link fw-bold text-dark small">Servicios</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?php echo $base_path; ?>auth/login.php" class="btn btn-outline-primary rounded-pill px-4 me-2 fw-bold">Iniciar Sesión</a>
