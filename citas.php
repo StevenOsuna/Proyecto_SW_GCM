@@ -51,7 +51,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
                 <div class="text-center mt-4 text-secondary small">
                     <i class="bi bi-info-circle me-1"></i> 
-                    Hoy es <?php echo date('d/m/Y'); ?>. Los días en gris no están disponibles.
+                    Hoy es <?php echo date('d/m/Y'); ?>. Los domingos y días pasados no están disponibles.
                 </div>
             </div>
         </div>
@@ -68,7 +68,6 @@ if (!isset($_SESSION['usuario_id'])) {
             locale: 'es',
             height: 'auto',
             
-            // Bloquea días anteriores a hoy
             validRange: {
                 start: new Date().toISOString().split('T')[0] 
             },
@@ -79,32 +78,41 @@ if (!isset($_SESSION['usuario_id'])) {
                 right: 'dayGridMonth'
             },
             buttonText: { today: 'Hoy' },
-            
-            // Origen de los datos
             events: 'api/obtener_citas.php', 
 
-            // --- SOLUCIÓN DE FUERZA BRUTA PARA VISIBILIDAD ---
             dayCellDidMount: function(info) {
-                // Seleccionamos el elemento del número del día
                 var numberEl = info.el.querySelector('.fc-daygrid-day-number');
                 
+                // Obtener el día de la semana (0 = Domingo, 1 = Lunes, etc.)
+                var dayOfWeek = info.date.getUTCDay();
+
+                // 1. Estilo base para números
                 if (numberEl) {
-                    // 1. Aseguramos que el número sea negro y visible siempre
                     numberEl.style.color = '#212529'; 
                     numberEl.style.fontWeight = '700';
                     numberEl.style.zIndex = '10';
                     numberEl.style.position = 'relative';
                 }
 
-                // 2. Si el día es pasado, forzamos el gris de fondo
-                if (info.isPast) {
-                    info.el.style.backgroundColor = '#f2f2f2';
+                // 2. BLOQUEO DE DOMINGOS
+                if (dayOfWeek === 0) {
+                    info.el.style.backgroundColor = '#ebebeb'; // Gris más oscuro para cerrado
+                    info.el.style.cursor = 'not-allowed';
                     if (numberEl) {
-                        numberEl.style.color = '#999999'; // Número un poco más suave en el pasado
+                        numberEl.style.color = '#bbbbbb';
+                        numberEl.style.textDecoration = 'line-through'; // Tachado opcional
                     }
                 }
 
-                // 3. Si es hoy, el número debe ser blanco para resaltar sobre el círculo azul del CSS
+                // 3. Días pasados
+                if (info.isPast) {
+                    info.el.style.backgroundColor = '#f2f2f2';
+                    if (numberEl) {
+                        numberEl.style.color = '#999999';
+                    }
+                }
+
+                // 4. Resaltado de Hoy
                 if (info.isToday) {
                     if (numberEl) {
                         numberEl.style.color = '#ffffff';
@@ -115,9 +123,18 @@ if (!isset($_SESSION['usuario_id'])) {
             dateClick: function(info) {
                 var hoy = new Date();
                 hoy.setHours(0,0,0,0);
+                
+                // Usamos getUTCDay para evitar problemas de zona horaria con la fecha del string
                 var fechaSeleccionada = new Date(info.dateStr + 'T00:00:00');
+                var diaSemana = fechaSeleccionada.getUTCDay();
 
-                // Solo redirigir si es hoy o futuro
+                // VALIDACIÓN: Si es Domingo
+                if (diaSemana === 0) {
+                    alert("Lo sentimos, los domingos no hay consulta disponible.");
+                    return false;
+                }
+
+                // Redirigir si es hoy o futuro
                 if (fechaSeleccionada >= hoy) {
                     window.location.href = "paciente/horarios.php?fecha=" + info.dateStr;
                 }
