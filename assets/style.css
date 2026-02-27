@@ -8,7 +8,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* El padding-top evita que el contenido se esconda bajo el navbar fijo */
 body {
     padding-top: 80px; 
     background-color: #fcfcfc;
@@ -50,40 +49,39 @@ main {
     transform: scale(1.05);
 }
 
-/* --- NUEVA SECCIÓN HERO PRINCIPAL --- */
+/* --- SECCIÓN HERO PRINCIPAL --- */
 .hero-principal {
-    height: 90vh; /* Ocupa casi todo el alto de la pantalla */
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
     
-    /* degradado oscuro para que el texto blanco sea legible */
-    /* USAMOS ../doctor.jpg PORQUE LA IMAGEN ESTÁ FUERA DE ASSETS */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 100%), 
-                url('../doctor.jpg') center/cover no-repeat;
+    /* Restauramos la imagen de fondo anterior con un degradado claro para que el azul sea legible */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.2) 100%), 
+                url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
 }
 
-/* Contenedor del texto para darles sombra y separarlos */
-.contenido-hero {
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
-
+/* Cambiamos el color de letra a AZUL en el Hero */
 .titulo-principal-hero {
     font-size: 3.2rem;
     font-weight: 800;
     line-height: 1.1;
-    color: #ffffff;
+    color: #007bff; /* AZUL */
     margin-bottom: 1.5rem;
 }
 
 .descripcion-hero {
-    color: #f8f9fa;
+    color: #0056b3; /* AZUL MÁS OSCURO */
     margin-bottom: 2rem;
 }
 
-/* --- BOTÓN AGENDAR (Estilo como el de tu referencia) --- */
+.descripcion-hero h2, .descripcion-hero p {
+    color: #0056b3; /* Asegura que subtítulo y párrafo sean azules */
+}
+
+/* --- BOTÓN AGENDAR (Verde vibrante) --- */
 .btn-agendar-hero {
-    background-color: #25d366 !important; /* Verde vibrante */
+    background-color: #25d366 !important;
     color: white !important;
     border: none;
     padding: 15px 40px;
@@ -93,14 +91,13 @@ main {
     display: inline-flex;
     align-items: center;
     transition: all 0.3s ease;
-    text-transform: none;
     text-decoration: none;
 }
 
 .btn-agendar-hero:hover {
     background-color: #128c7e !important;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
 }
 
 /* --- SECCIÓN CONÓCENOS --- */
@@ -120,7 +117,6 @@ main {
 .medico-logo-icon {
     font-size: 2.8rem;
     color: #007bff;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .modal-content {
@@ -136,13 +132,13 @@ footer {
     text-align: center;
 }
 
-/* --- RESPONSIVIDAD (Celulares) --- */
+/* --- RESPONSIVIDAD --- */
 @media (max-width: 768px) {
     .hero-principal {
         height: auto;
         padding: 100px 0;
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('../doctor.jpg') center/cover;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                    url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover;
     }
 
     .titulo-principal-hero {
