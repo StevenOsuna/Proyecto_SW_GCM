@@ -76,14 +76,6 @@ main {
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-.btn-agendar-hero {
-    padding: 16px 45px;
-    font-size: 1.2rem;
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
 .btn-agendar-hero:hover, .btn-primary:hover {
     background-color: #0056b3 !important;
     transform: translateY(-3px);
@@ -103,27 +95,7 @@ main {
     box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15) !important;
 }
 
-/* --- 5. FORMULARIOS (LOGIN Y REGISTRO) --- */
-.input-group-text {
-    background-color: #ffffff;
-    border-right: none;
-    color: #007bff;
-    border-radius: 15px 0 0 15px;
-}
-
-.form-control {
-    border-left: none;
-    border-radius: 0 15px 15px 0;
-    padding: 12px;
-}
-
-.form-control:focus {
-    box-shadow: none;
-    border-color: #ced4da;
-    background-color: #ffffff;
-}
-
-/* --- 6. PANEL DEL PACIENTE --- */
+/* --- 5. PANEL DEL PACIENTE --- */
 .card-body .bi {
     display: inline-block;
     padding: 20px;
@@ -140,6 +112,12 @@ main {
     transform: rotate(10deg) scale(1.1);
 }
 
+/* --- 6. FORMULARIOS --- */
+.form-control {
+    border-radius: 12px;
+    padding: 12px;
+}
+
 /* --- 7. FOOTER --- */
 .footer-medico {
     background-color: #212529;
@@ -147,7 +125,7 @@ main {
     padding: 3rem 0;
 }
 
-/* --- 8. BOTÓN WHATSAPP Y RESPONSIVIDAD --- */
+/* --- 8. WHATSAPP --- */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -155,26 +133,18 @@ main {
     background-color: #25d366;
     color: #FFF !important;
     border-radius: 50px;
-    text-align: center;
-    font-size: 25px;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
     z-index: 1000;
     display: flex;
     align-items: center;
     padding: 10px 20px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 768px) {
-    .titulo-principal-hero { font-size: 2.4rem; text-align: center; }
-    .whatsapp-float span { display: none; }
-    .whatsapp-float { padding: 15px; border-radius: 50%; }
-}
+/* --- 9. FULLCALENDAR (CORRECCIÓN DEFINITIVA) --- */
 
-/* --- 9. CONFIGURACIÓN FULLCALENDAR --- */
 :root { 
-    --fc-border-color: #f0f0f0; 
+    --fc-border-color: #eeeeee; 
     --fc-button-bg-color: #007bff; 
     --fc-button-border-color: #007bff; 
     --fc-today-bg-color: #f0f7ff;
@@ -188,59 +158,40 @@ main {
     text-transform: capitalize; 
 }
 
-/* Botones de navegación */
-.fc .fc-button {
-    border-radius: 12px !important;
-    font-weight: 600;
-    padding: 8px 16px;
-    transition: all 0.3s ease;
-}
-
-/* Cabecera de días (LUN, MAR...) */
-.fc .fc-col-header-cell { 
-    background: #f8f9fa; 
-    padding: 12px 0; 
-    border-bottom: 2px solid #eee; 
-}
-
-.fc .fc-col-header-cell-cushion { 
-    color: #007bff; 
-    text-decoration: none; 
-    font-weight: 800; 
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-
-/* --- AJUSTE DE VISIBILIDAD DE NÚMEROS --- */
-
-/* Forzamos que el número del día siempre sea visible */
+/* Forzar que el número siempre esté visible arriba */
 .fc .fc-daygrid-day-top {
-    display: flex !important;
     flex-direction: row !important;
-    justify-content: inherit !important;
-    z-index: 5 !important; /* Lo ponemos por encima del fondo gris */
+    justify-content: flex-end !important;
+    z-index: 10 !important;
 }
 
 .fc .fc-daygrid-day-number {
-    color: #212529 !important; /* Negro Bootstrap, muy legible */
-    font-weight: 700 !important; /* Negrita extra */
+    color: #212529 !important; /* Negro sólido */
+    font-weight: 700 !important;
     font-size: 1rem !important;
     padding: 8px 12px !important;
     text-decoration: none !important;
-    opacity: 1 !important; /* Cero transparencia */
+    position: relative !important;
 }
 
-/* Días pasados: fondo gris muy suave para que el número resalte */
-.fc-day-past {
-    background-color: #eeeeee !important; 
+/* DÍAS PASADOS (Grisado real) */
+.fc-day-past, 
+.fc-day-past .fc-daygrid-day-frame,
+.fc-day-past .fc-daygrid-day-events,
+.fc-day-past .fc-daygrid-day-bg-highlight {
+    background-color: #f8f9fa !important; /* Gris suave */
 }
 
-/* El número en días pasados (un poco menos intenso pero totalmente legible) */
+/* El número en días pasados (tenue pero legible) */
 .fc-day-past .fc-daygrid-day-number {
-    color: #555555 !important; 
+    color: #adb5bd !important; 
 }
 
-/* Día de hoy: Número blanco sobre círculo azul */
+/* DÍA DE HOY (Círculo azul profesional) */
+.fc-day-today {
+    background-color: transparent !important;
+}
+
 .fc-day-today .fc-daygrid-day-number {
     background-color: #007bff !important;
     color: #ffffff !important;
@@ -251,21 +202,36 @@ main {
     align-items: center !important;
     justify-content: center !important;
     margin: 4px !important;
-    padding: 0 !important; /* Reset de padding para el círculo */
+    padding: 0 !important;
 }
 
-/* Interacción con las celdas */
+/* Cabecera de días (DOM, LUN...) */
+.fc .fc-col-header-cell {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+.fc .fc-col-header-cell-cushion { 
+    color: #007bff !important; 
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-decoration: none !important;
+}
+
+/* Quitar resaltados amarillos por defecto */
+.fc-daygrid-day-bg-highlight {
+    background-color: transparent !important;
+}
+
+/* Hover en días futuros */
 .fc-daygrid-day:hover:not(.fc-day-past) { 
     background-color: #f0f7ff !important; 
     cursor: pointer; 
-    transition: 0.2s ease; 
 }
 
-/* Estilo de Eventos */
-.fc-event {
-    border-radius: 6px !important;
-    padding: 2px 5px;
-    font-size: 0.85rem;
-    border: none !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Botones del calendario */
+.fc .fc-button-primary {
+    border-radius: 10px !important;
+    font-weight: 600;
 }
