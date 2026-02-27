@@ -68,7 +68,7 @@
             </div>
             <div class="modal-body text-center p-4">
                 <i class="bi bi-hospital-fill text-primary" style="font-size: 3rem;"></i>
-                <p class="fs-5 mt-3">Nuestro consultorio médico nació con el propósito de brindar atención médica accesible, profesional y humana a la comunidad.</p>
+                <p class="fs-5 mt-3">Mi consultorio médico nació con el propósito de brindar atención médica accesible, profesional y humana a la comunidad.</p>
                 <p class="fs-5 text-muted">Hoy continuamos trabajando con la misma vocación que nos dio origen: cuidar la salud de cada persona con profesionalismo, calidez y compromiso.</p>
             </div>
         </div>
