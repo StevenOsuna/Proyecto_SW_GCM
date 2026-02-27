@@ -123,22 +123,21 @@ main {
     background-color: #ffffff;
 }
 
-/* --- 6. PANEL DEL PACIENTE (NUEVO) --- */
+/* --- 6. PANEL DEL PACIENTE --- */
 .card-body .bi {
     display: inline-block;
     padding: 20px;
-    background-color: #f0f7ff; /* Fondo azul suave para el icono */
+    background-color: #f0f7ff;
     border-radius: 20px;
     margin-bottom: 1rem;
     transition: all 0.3s ease;
     color: #007bff;
 }
 
-/* Efecto al pasar el mouse por la tarjeta del panel */
 .card-servicio:hover .bi {
-    background-color: #007bff; /* El fondo se vuelve azul sólido */
-    color: #ffffff !important; /* El icono se vuelve blanco */
-    transform: rotate(10deg) scale(1.1); /* Ligero giro animado */
+    background-color: #007bff;
+    color: #ffffff !important;
+    transform: rotate(10deg) scale(1.1);
 }
 
 /* --- 7. FOOTER --- */
@@ -173,75 +172,7 @@ main {
     .whatsapp-float { padding: 15px; border-radius: 50%; }
 }
 
-/* --- 9. AJUSTES PARA FULLCALENDAR (AGENDAR CITA) --- */
-
-/* Contenedor principal del calendario */
-.fc {
-    --fc-border-color: #f0f0f0;
-    --fc-today-bg-color: #f0f7ff;
-    --fc-button-bg-color: #007bff;
-    --fc-button-border-color: #007bff;
-    --fc-button-hover-bg-color: #0056b3;
-    --fc-button-active-bg-color: #004a9b;
-    font-family: inherit;
-}
-
-/* Título del mes (ej. Febrero 2026) */
-.fc .fc-toolbar-title {
-    font-size: 1.6rem !important;
-    font-weight: 800;
-    color: #2c3e50;
-    text-transform: capitalize;
-}
-
-/* Estilo de los botones (Hoy, Flechas) */
-.fc .fc-button {
-    border-radius: 12px !important;
-    font-weight: 600;
-    padding: 8px 16px;
-    transition: all 0.3s ease;
-}
-
-/* Cabecera de los días (Lun, Mar, Mié...) */
-.fc .fc-col-header-cell {
-    padding: 12px 0;
-    background-color: #f8f9fa;
-    font-weight: 700;
-    color: #6c757d;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-}
-
-/* Celdas de los días */
-.fc-daygrid-day {
-    transition: background-color 0.2s ease;
-}
-
-/* Efecto hover en los días (Igual que tus tarjetas) */
-.fc-daygrid-day:hover {
-    background-color: #f0f7ff !important;
-    cursor: pointer;
-}
-
-/* Número del día dentro de la celda */
-.fc .fc-daygrid-day-number {
-    padding: 10px;
-    font-weight: 600;
-    color: #495057;
-    text-decoration: none;
-}
-
-/* Eventos (Citas ya ocupadas) */
-.fc-event {
-    border-radius: 6px !important;
-    padding: 2px 5px;
-    font-size: 0.85rem;
-    border: none !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* --- 9. CALENDARIO (FullCalendar) --- */
-
+/* --- 9. CONFIGURACIÓN FULLCALENDAR --- */
 :root { 
     --fc-border-color: #f0f0f0; 
     --fc-button-bg-color: #007bff; 
@@ -249,13 +180,23 @@ main {
     --fc-today-bg-color: #f0f7ff;
 }
 
-/* Título y Cabecera */
+/* Toolbar y Título */
 .fc .fc-toolbar-title { 
-    font-weight: 700; 
+    font-size: 1.6rem !important;
+    font-weight: 800; 
     color: #2c3e50; 
     text-transform: capitalize; 
 }
 
+/* Botones de navegación */
+.fc .fc-button {
+    border-radius: 12px !important;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+/* Cabecera de días (LUN, MAR...) */
 .fc .fc-col-header-cell { 
     background: #f8f9fa; 
     padding: 12px 0; 
@@ -266,28 +207,28 @@ main {
     color: #007bff; 
     text-decoration: none; 
     font-weight: 800; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
 }
 
-/* Estilo de los Números de los Días */
+/* Números de los días */
 .fc .fc-daygrid-day-number {
     padding: 8px 12px;
     font-weight: 600;
     color: #444 !important;
     text-decoration: none !important;
-    position: relative;
-    z-index: 2;
 }
 
-/* Días Pasados (Deshabilitados) */
+/* Días Pasados */
 .fc-day-past {
     background-color: #fafafa !important;
 }
 
 .fc-day-past .fc-daygrid-day-number {
-    color: #bbb !important; /* Número visible pero tenue */
+    color: #bbb !important;
 }
 
-/* Día de Hoy con Círculo Azul */
+/* Resalte del día de Hoy */
 .fc-day-today .fc-daygrid-day-number {
     background-color: #007bff;
     color: white !important;
@@ -300,16 +241,18 @@ main {
     margin: 5px;
 }
 
-/* Efecto Hover solo en días activos */
+/* Interacción con las celdas */
 .fc-daygrid-day:hover:not(.fc-day-past) { 
     background-color: #f0f7ff !important; 
     cursor: pointer; 
     transition: 0.2s ease; 
 }
 
-/* Botones del Calendario */
-.fc .fc-button-primary {
-    border-radius: 10px;
-    font-weight: 600;
-    text-transform: capitalize;
+/* Estilo de Eventos */
+.fc-event {
+    border-radius: 6px !important;
+    padding: 2px 5px;
+    font-size: 0.85rem;
+    border: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
