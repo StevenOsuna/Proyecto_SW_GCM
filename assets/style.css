@@ -69,29 +69,33 @@ main {
     line-height: 1.6;
 }
 
-/* --- BOTÓN AGENDAR --- */
-.btn-agendar-hero {
+/* --- BOTONES --- */
+.btn-agendar-hero, .btn-primary {
     background-color: #007bff !important; 
     color: white !important;
     border: none;
-    padding: 16px 45px;
-    font-size: 1.2rem;
+    padding: 12px 35px;
     font-weight: bold;
     border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
     transition: all 0.3s ease;
-    text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-.btn-agendar-hero:hover {
+.btn-agendar-hero {
+    padding: 16px 45px;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-agendar-hero:hover, .btn-primary:hover {
     background-color: #0056b3 !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
 }
 
-/* --- SECCIÓN CONÓCENOS (HISTORIA FIJA) --- */
+/* --- SECCIÓN CONÓCENOS --- */
 .seccion-quienes {
     padding: 100px 0;
     background-color: #ffffff;
@@ -109,20 +113,6 @@ main {
     margin: 0 auto;
     font-style: italic;
     color: #6c757d;
-}
-
-.historia-fija i {
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
-
-.btn-outline-primary.rounded-pill {
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary.rounded-pill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
 }
 
 /* --- SECCIÓN SERVICIOS (TARJETAS) --- */
@@ -147,15 +137,18 @@ main {
     object-fit: cover;
 }
 
-/* --- FORMULARIOS (REGISTRO Y LOGIN) --- */
+/* --- FORMULARIOS (LOGIN Y REGISTRO) --- */
 .input-group-text {
     background-color: #ffffff;
     border-right: none;
     color: #007bff;
+    border-radius: 15px 0 0 15px;
 }
 
 .form-control {
     border-left: none;
+    border-radius: 0 15px 15px 0;
+    padding: 12px;
 }
 
 .form-control:focus {
@@ -169,11 +162,11 @@ main {
     color: #495057;
 }
 
-/* --- ESTADO DE REGISTRO (ÉXITO / ERROR) --- */
+/* --- PANTALLA DE ESTADO (EXITO / ERROR) --- */
 .card-estado {
     border-radius: 20px;
     border: none;
-    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
 .icono-estado-gigante {
@@ -186,12 +179,6 @@ main {
 .medico-logo-icon {
     font-size: 2.8rem;
     color: #007bff;
-}
-
-.modal-content {
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 
 /* --- FOOTER --- */
@@ -210,14 +197,6 @@ main {
     opacity: 1;
     color: #007bff !important;
     padding-left: 5px;
-}
-
-.footer-medico i {
-    transition: transform 0.3s ease;
-}
-
-.footer-medico a:hover i {
-    transform: scale(1.2);
 }
 
 /* --- BOTÓN FLOTANTE WHATSAPP --- */
@@ -239,16 +218,9 @@ main {
     transition: all 0.3s ease;
 }
 
-.whatsapp-float span {
-    font-size: 16px;
-    margin-left: 10px;
-    font-weight: 600;
-}
-
 .whatsapp-float:hover {
     background-color: #128c7e;
     transform: scale(1.1);
-    color: #FFF;
 }
 
 /* --- RESPONSIVIDAD --- */
@@ -268,11 +240,6 @@ main {
     .contenido-hero {
         text-align: center;
     }
-    
-    .btn-agendar-hero {
-        width: 100%;
-        justify-content: center;
-    }
 
     .whatsapp-float span {
         display: none;
@@ -281,7 +248,5 @@ main {
     .whatsapp-float {
         padding: 15px;
         border-radius: 50%;
-        bottom: 20px;
-        right: 20px;
     }
 }
