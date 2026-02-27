@@ -25,7 +25,7 @@
                         Atención médica profesional y de calidad para toda la familia.
                     </h1>
                     <div class="descripcion-hero">
-                        <h2 class="h3 fw-semibold mb-3 text-primary">Tratamientos y servicios</h2>
+                        <h2 class="h3 fw-semibold mb-3 text-primary">Atención Médica Integral</h2>
                         <p class="fs-5">
                             Ofrezco atención <strong>integral</strong> para el <strong>diagnóstico, control y seguimiento</strong> de enfermedades.
                         </p>
@@ -36,6 +36,18 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 seccion-quienes" id="conocenos">
+        <div class="container text-center">
+            <h2 class="titulo-quienes mb-5">¿Quiénes Somos?</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
+                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
             </div>
         </div>
     </section>
@@ -97,18 +109,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 seccion-quienes" id="conocenos">
-        <div class="container text-center">
-            <h2 class="titulo-quienes mb-5">¿Quiénes Somos?</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
             </div>
         </div>
     </section>
