@@ -41,16 +41,34 @@
     </section>
 
     <section class="py-5 seccion-quienes" id="conocenos">
-        <div class="container text-center">
-            <h2 class="titulo-quienes mb-5">¿Quiénes Somos?</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalHistoria">Nuestra historia</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalMision">Misión</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalVision">Visión</button>
-                <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#modalValores">Valores</button>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="titulo-quienes mb-4">¿Quiénes Somos?</h2>
+                
+                <div class="historia-fija mb-5">
+                    <i class="bi bi-hospital text-primary display-4 mb-3 d-block"></i>
+                    <p class="fs-5 lh-lg text-muted">
+                        Mi consultorio médico nació con el propósito de brindar atención médica <strong>accesible, profesional y humana</strong> a la comunidad. 
+                        Hoy continuamos trabajando con la misma vocación que nos dio origen: cuidar la salud de cada persona con profesionalismo y calidez.
+                    </p>
+                </div>
+                
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#modalMision">
+                        <i class="bi bi-bullseye me-2"></i>Misión
+                    </button>
+                    <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#modalVision">
+                        <i class="bi bi-eye me-2"></i>Visión
+                    </button>
+                    <button class="btn btn-outline-primary fw-bold px-4 py-2 rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#modalValores">
+                        <i class="bi bi-star me-2"></i>Valores
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="servicios" class="py-5 bg-light">
         <div class="container">
