@@ -51,40 +51,50 @@ main {
 
 /* --- SECCIÓN HERO PRINCIPAL --- */
 .hero-principal {
-    height: 90vh;
+    height: 90vh; /* Ocupa el 90% de la pantalla */
     position: relative;
     display: flex;
     align-items: center;
     
-    /* Restauramos la imagen de fondo anterior con un degradado claro para que el azul sea legible */
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.2) 100%), 
+    /* IMAGEN PROFESIONAL DE UN SPLASH CON DEGRADADO CLARO */
+    /* El degradado blanco a la izquierda hace que las letras azules resalten */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.2) 100%), 
                 url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
 }
 
-/* Cambiamos el color de letra a AZUL en el Hero */
+/* Color de letra AZUL para el título y descripción */
 .titulo-principal-hero {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.1;
-    color: #007bff; /* AZUL */
+    color: #007bff; /* AZUL MÉDICO */
     margin-bottom: 1.5rem;
+    max-width: 800px;
 }
 
 .descripcion-hero {
-    color: #0056b3; /* AZUL MÁS OSCURO */
     margin-bottom: 2rem;
+    max-width: 650px;
 }
 
-.descripcion-hero h2, .descripcion-hero p {
-    color: #0056b3; /* Asegura que subtítulo y párrafo sean azules */
+/* Aseguramos que todo el texto dentro de la descripción sea azul */
+.descripcion-hero h2, 
+.descripcion-hero p, 
+.descripcion-hero strong {
+    color: #0056b3 !important; 
 }
 
-/* --- BOTÓN AGENDAR (Verde vibrante) --- */
+.descripcion-hero p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+/* --- BOTÓN AGENDAR (Verde vibrante estilo referencia) --- */
 .btn-agendar-hero {
-    background-color: #25d366 !important;
+    background-color: #25d366 !important; 
     color: white !important;
     border: none;
-    padding: 15px 40px;
+    padding: 16px 45px;
     font-size: 1.2rem;
     font-weight: bold;
     border-radius: 50px;
@@ -92,25 +102,26 @@ main {
     align-items: center;
     transition: all 0.3s ease;
     text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .btn-agendar-hero:hover {
     background-color: #128c7e !important;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
 }
 
 /* --- SECCIÓN CONÓCENOS --- */
 .seccion-quienes {
-    padding: 80px 0;
+    padding: 100px 0;
     background-color: #ffffff;
 }
 
 .titulo-quienes {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #007bff;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 /* --- OTROS ELEMENTOS --- */
@@ -121,32 +132,37 @@ main {
 
 .modal-content {
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 
 /* --- FOOTER --- */
 footer {
     background-color: #212529;
     color: #ffffff;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
 }
 
-/* --- RESPONSIVIDAD --- */
+/* --- RESPONSIVIDAD (Ajustes para móvil) --- */
 @media (max-width: 768px) {
     .hero-principal {
         height: auto;
-        padding: 100px 0;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+        padding: 120px 0 80px 0;
+        background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85)), 
                     url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover;
     }
 
     .titulo-principal-hero {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         text-align: center;
     }
     
     .contenido-hero {
         text-align: center;
+    }
+    
+    .btn-agendar-hero {
+        width: 100%;
+        justify-content: center;
     }
 }
