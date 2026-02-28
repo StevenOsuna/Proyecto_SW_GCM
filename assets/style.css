@@ -235,3 +235,53 @@ main {
     border-radius: 10px !important;
     font-weight: 600;
 }
+
+/* --- 10. AJUSTES ESPECÍFICOS PARA CALENDARIO DE CITAS --- */
+
+/* Bloqueo visual de Domingos (Día Cerrado) */
+.fc-day-sun {
+    background-color: #f8f9fa !important; /* Fondo gris claro */
+}
+
+.fc-day-sun .fc-daygrid-day-number {
+    color: #ced4da !important; /* Número casi invisible */
+    text-decoration: line-through; /* Tachado para indicar que no hay servicio */
+    opacity: 0.5;
+}
+
+/* Cambio de cursor para días no disponibles (Pasados y Domingos) */
+.fc-day-sun:hover, 
+.fc-day-past:hover {
+    cursor: not-allowed !important;
+}
+
+/* --- 11. ESTILOS PARA ALERTAS (SWEETALERT2) --- */
+
+/* Ventana emergente redondeada como tus tarjetas */
+.swal2-popup {
+    border-radius: 20px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    padding: 2rem !important;
+}
+
+/* Títulos de la alerta */
+.swal2-title {
+    color: #2c3e50 !important;
+    font-weight: 700 !important;
+}
+
+/* Botón de confirmación estilo "Cápsula" */
+.swal2-styled.swal2-confirm {
+    background-color: #007bff !important;
+    border-radius: 50px !important;
+    padding: 12px 35px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+}
+
+/* Ajuste fino para la sombra de la alerta */
+.swal2-container.swal2-backdrop-show {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(4px); /* Difumina un poco el fondo para dar elegancia */
+}
