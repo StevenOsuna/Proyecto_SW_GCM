@@ -1,5 +1,5 @@
 <?php
-include("config/conexion.php");
+include("../config/conexion.php");
 
 // Recibir y limpiar datos básicos
 $nombre   = $_POST['nombre'];

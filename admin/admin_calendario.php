@@ -1,16 +1,14 @@
 <?php
-session_start();
+include 'layout_admin.php';
 require_once("../config/conexion.php");
 
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin/admin_login.php");
-    exit();
-}
+/* =========================
+   OBTENER CITAS
+========================= */
 
-/* CITAS */
 $sql = "SELECT citas.*, pacientes.nombre 
         FROM citas 
-        JOIN pacientes ON citas.usuario_id = pacientes.id";
+        JOIN pacientes ON citas.paciente_id = pacientes.id";
 
 $resultado = $conn->query($sql);
 
@@ -24,7 +22,10 @@ while ($fila = $resultado->fetch_assoc()) {
     ];
 }
 
-/* DIAS BLOQUEADOS */
+/* =========================
+   DÍAS BLOQUEADOS
+========================= */
+
 $sql2 = "SELECT * FROM dias_bloqueados";
 $res2 = $conn->query($sql2);
 
@@ -37,25 +38,27 @@ while ($bloq = $res2->fetch_assoc()) {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<h2 class="admin-title mb-4">
+    Calendario General del Consultorio
+</h2>
 
-<title>Calendario Administrador</title>
+<div class="card admin-card p-4">
 
+    <div id="calendar"></div>
+
+</div>
+
+<div class="mt-4">
+    <a href="admin_panel.php" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Volver al Panel
+    </a>
+</div>
+
+<!-- FullCalendar -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 
-</head>
-
-<body>
-
-<h2>Calendario de Citas</h2>
-
-<div id="calendar"></div>
-
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
 
     var calendarEl = document.getElementById('calendar');
@@ -63,13 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
         initialView: 'dayGridMonth',
+        locale: 'es',
 
         events: <?php echo json_encode($eventos); ?>,
 
+        height: 650,
+
         dateClick: function(info) {
 
-            if(confirm("¿Bloquear este día?")) {
-                window.location.href = "../bloquear_dia.php?fecha=" + info.dateStr;
+            if(confirm("¿Deseas bloquear este día?")) {
+                window.location.href = "bloquear_dia.php?fecha=" + info.dateStr;
             }
 
         }
@@ -79,11 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 
 });
-
 </script>
 
-<br>
-<a href="admin/admin_panel.php">Volver</a>
-
+</main>
+<?php include '../estructura/footer.php'; ?>
 </body>
 </html>

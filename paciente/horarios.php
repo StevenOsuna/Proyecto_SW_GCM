@@ -8,10 +8,50 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 
 $fecha = $_GET['fecha'] ?? date('Y-m-d');
+/* =========================
+   VERIFICAR DÍA BLOQUEADO
+========================= */
+
+$stmt = $conn->prepare("SELECT id FROM dias_bloqueados WHERE fecha = ?");
+$stmt->bind_param("s", $fecha);
+$stmt->execute();
+$result_check = $stmt->get_result();
+
+if ($result_check->num_rows > 0) {
+    echo "<script>
+            alert('Este día no está disponible para agendar.');
+            window.location.href='../citas.php';
+          </script>";
+    exit();
+}
 // Formateamos la fecha para que se vea mejor (ej: 27/02/2026)
 $fecha_formateada = date("d/m/Y", strtotime($fecha));
 
-$horarios = ["09:00", "10:00", "11:00", "12:00", "13:00", "16:00", "17:00"];
+/* =========================
+   OBTENER HORARIOS ACTIVOS
+========================= */
+
+$stmt = $conn->prepare("
+    SELECT h.hora 
+    FROM horarios h
+    WHERE h.activo = 1
+    AND h.hora NOT IN (
+        SELECT c.hora 
+        FROM citas c 
+        WHERE c.fecha = ?
+    )
+    ORDER BY h.hora ASC
+");
+
+$stmt->bind_param("s", $fecha);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$horarios = [];
+
+while($row = $result->fetch_assoc()) {
+    $horarios[] = date("H:i", strtotime($row['hora']));
+}
 ?>
 
 <!DOCTYPE html>

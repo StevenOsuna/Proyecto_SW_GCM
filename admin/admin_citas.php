@@ -1,50 +1,79 @@
 <?php
-session_start();
-require_once("../config/conexion.php");
+include 'layout_admin.php';
+include("../config/conexion.php");
 
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin_login.html");
-    exit();
-}
+/* =========================
+   OBTENER CITAS
+========================= */
 
-$sql = "SELECT citas.*, pacientes.nombre 
-        FROM citas 
-        JOIN pacientes ON citas.paciente_id = pacientes.id
-        ORDER BY fecha, hora";
+$sql = "SELECT c.id, c.fecha, c.hora, p.nombre 
+        FROM citas c
+        JOIN pacientes p ON c.paciente_id = p.id
+        ORDER BY c.fecha DESC, c.hora DESC";
 
-$resultado = $conn->query($sql);
+$result = $conn->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Citas Agendadas</title>
-</head>
-<body>
+<h2 class="admin-title mb-4">
+    Gestión de Citas
+</h2>
 
-<h2>Citas Registradas</h2>
+<div class="card admin-card p-4">
 
-<table border="1">
-    <tr>
-        <th>Paciente</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-    </tr>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Paciente</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th class="text-center">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
 
-<?php while ($fila = $resultado->fetch_assoc()) { ?>
+            <?php while ($row = $result->fetch_assoc()) { ?>
 
-<tr>
-    <td><?php echo $fila['nombre']; ?></td>
-    <td><?php echo $fila['fecha']; ?></td>
-    <td><?php echo $fila['hora']; ?></td>
-</tr>
+                <tr>
+                    <td>
+                        <i class="bi bi-person-circle text-primary me-2"></i>
+                        <?php echo $row['nombre']; ?>
+                    </td>
 
-<?php } ?>
+                    <td>
+                        <i class="bi bi-calendar-event text-primary me-2"></i>
+                        <?php echo $row['fecha']; ?>
+                    </td>
 
-</table>
+                    <td>
+                        <i class="bi bi-clock text-primary me-2"></i>
+                        <?php echo $row['hora']; ?>
+                    </td>
 
-<br>
-<a href="admin_panel.php">Volver</a>
+                    <td class="text-center">
+                        <a href="eliminar_cita.php?id=<?php echo $row['id']; ?>"
+                           class="btn btn-sm btn-outline-danger"
+                           onclick="return confirm('¿Seguro que deseas eliminar esta cita?')">
+                           <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
 
+            <?php } ?>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="mt-4">
+    <a href="admin_panel.php" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Volver al Panel
+    </a>
+</div>
+
+</main>
+<?php include '../estructura/footer.php'; ?>
 </body>
 </html>
