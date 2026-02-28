@@ -5,7 +5,6 @@ if (!isset($_SESSION['usuario_id'])) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +18,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <link rel="stylesheet" href="assets/style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 </head>
 
@@ -80,21 +80,15 @@ if (!isset($_SESSION['usuario_id'])) {
                 var numberEl = info.el.querySelector('.fc-daygrid-day-number');
                 var dayOfWeek = info.date.getUTCDay();
 
+                // Asegurar visibilidad del número
                 if (numberEl) {
                     numberEl.style.color = '#212529'; 
                     numberEl.style.fontWeight = '700';
+                    numberEl.style.position = 'relative';
+                    numberEl.style.zIndex = '5';
                 }
 
-                if (dayOfWeek === 0) {
-                    info.el.style.backgroundColor = '#f8f9fa';
-                    if (numberEl) { numberEl.style.color = '#ccc'; }
-                }
-
-                if (info.isPast) {
-                    info.el.style.backgroundColor = '#f2f2f2';
-                    if (numberEl) { numberEl.style.color = '#999999'; }
-                }
-
+                // Color para hoy (número blanco)
                 if (info.isToday && numberEl) {
                     numberEl.style.color = '#ffffff';
                 }
@@ -106,21 +100,19 @@ if (!isset($_SESSION['usuario_id'])) {
                 var fechaSeleccionada = new Date(info.dateStr + 'T00:00:00');
                 var diaSemana = fechaSeleccionada.getUTCDay();
 
-                // NUEVO MENSAJE ELEGANTE PARA DOMINGOS
+                // Validación de Domingos con SweetAlert2
                 if (diaSemana === 0) {
                     Swal.fire({
-                        title: 'Día no laborable',
-                        text: 'Lo sentimos, los domingos no hay consulta disponible. Por favor, selecciona un día de lunes a sábado.',
+                        title: 'Día Cerrado',
+                        text: 'Los domingos no se ofrece consulta médica. Por favor, selecciona otro día.',
                         icon: 'info',
                         confirmButtonText: 'Entendido',
-                        confirmButtonColor: '#007bff',
-                        customClass: {
-                            popup: 'rounded-4 shadow'
-                        }
+                        confirmButtonColor: '#007bff'
                     });
                     return false;
                 }
 
+                // Redirección si es hoy o futuro
                 if (fechaSeleccionada >= hoy) {
                     window.location.href = "paciente/horarios.php?fecha=" + info.dateStr;
                 }
