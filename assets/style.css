@@ -236,25 +236,43 @@ main {
     font-weight: 600;
 }
 
-/* --- 10. AJUSTES ESPECÍFICOS PARA CALENDARIO DE CITAS --- */
+/* --- 10. ESTILOS ESPECÍFICOS PARA GUARDAR CITA Y ALERTAS --- */
 
-/* Bloqueo visual de Domingos (Día Cerrado) */
+/* Bloqueo visual de Domingos en el calendario */
 .fc-day-sun {
-    background-color: #f8f9fa !important; /* Fondo gris claro */
+    background-color: #f8f9fa !important;
 }
 
 .fc-day-sun .fc-daygrid-day-number {
-    color: #ced4da !important; /* Número casi invisible */
-    text-decoration: line-through; /* Tachado para indicar que no hay servicio */
+    color: #ced4da !important;
+    text-decoration: line-through;
     opacity: 0.5;
 }
 
-/* Cambio de cursor para días no disponibles (Pasados y Domingos) */
-.fc-day-sun:hover, 
-.fc-day-past:hover {
-    cursor: not-allowed !important;
+/* Personalización de SweetAlert2 (Para que combine con tu diseño médico) */
+.swal2-popup {
+    border-radius: 20px !important; /* Curva igual a tus tarjetas */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    padding: 2rem !important;
 }
 
+.swal2-title {
+    color: #2c3e50 !important;
+    font-weight: 700 !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #007bff !important; /* Tu azul principal */
+    border-radius: 50px !important; /* Botón tipo cápsula */
+    padding: 12px 35px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+}
+
+/* Efecto de desenfoque al fondo cuando aparece el mensaje */
+.swal2-container.swal2-backdrop-show {
+    backdrop-filter: blur(4px);
+}
 /* --- 11. ESTILOS PARA ALERTAS (SWEETALERT2) --- */
 
 /* Ventana emergente redondeada como tus tarjetas */
