@@ -82,7 +82,7 @@
                     <div class="card h-100 shadow-sm border-0 card-servicio">
                         <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Medicina General">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-stethoscope me-2"></i>Medicina General</h5>
+                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-capsule me-2"></i>Medicina General</h5>
                             <p class="card-text text-muted">Diagnóstico y tratamiento de enfermedades agudas y crónicas (infecciones, dolor, malestares).</p>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                     <div class="card h-100 shadow-sm border-0 card-servicio">
                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Salud Mental" style="height: 250px;">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-brain me-2"></i>Salud Mental</h5>
+                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-puzzle me-2"></i>Salud Mental</h5>
                             <p class="card-text text-muted">Evaluación primaria de ansiedad, depresión y estrés con un enfoque en la atención integral y humana.</p>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <div class="card h-100 shadow-sm border-0 card-servicio">
                         <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Materno Infantil" style="height: 250px;">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-infant-fill me-2"></i>Atención Materno-Infantil</h5>
+                            <h5 class="card-title fw-bold text-primary"><i class="bi bi-person-hearts me-2"></i>Atención Materno-Infantil</h5>
                             <p class="card-text text-muted">Control prenatal de bajo riesgo, vigilancia del desarrollo infantil y esquema de vacunación.</p>
                         </div>
                     </div>
