@@ -141,7 +141,7 @@ main {
     box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
 }
 
-/* --- 9. FULLCALENDAR (CORRECCIÓN DEFINITIVA) --- */
+/* --- 9. FULLCALENDAR --- */
 
 :root { 
     --fc-border-color: #eeeeee; 
@@ -249,9 +249,9 @@ main {
     opacity: 0.5;
 }
 
-/* Personalización de SweetAlert2 (Para que combine con tu diseño médico) */
+/* Personalización de SweetAlert2 */
 .swal2-popup {
-    border-radius: 20px !important; /* Curva igual a tus tarjetas */
+    border-radius: 20px !important; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     padding: 2rem !important;
 }
