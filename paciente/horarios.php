@@ -24,7 +24,7 @@ if ($result_check->num_rows > 0) {
           </script>";
     exit();
 }
-// Formateamos la fecha para que se vea mejor (ej: 27/02/2026)
+
 $fecha_formateada = date("d/m/Y", strtotime($fecha));
 
 /* =========================
