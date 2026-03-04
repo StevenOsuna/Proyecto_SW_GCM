@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../config/conexion.php"); // Asegúrate de que esta ruta sea correcta
+include("../config/conexion.php"); 
 
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: ../auth/login.php");
