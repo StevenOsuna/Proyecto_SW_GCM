@@ -23,13 +23,13 @@ $telefono = $_POST['telefono'];
 <body>
 
 <?php
-// Actualizar en la tabla 'pacientes' (según tu captura de phpMyAdmin)
+// Actualizar en la tabla 'pacientes' 
 $sql = "UPDATE pacientes SET nombre = ?, telefono = ? WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssi", $nombre, $telefono, $id);
 
 if ($stmt->execute()) {
-    // Actualizamos también el nombre en la sesión para que el saludo cambie al instante
+    // E nombre en la sesión para que el saludo cambie al instante
     $_SESSION['usuario_nombre'] = $nombre;
 
     echo "<script>
