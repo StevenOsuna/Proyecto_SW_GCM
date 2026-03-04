@@ -15,7 +15,7 @@
 
     <?php 
     $pageTitle = "Registro";
-    // El navbar ya contiene el botón de "Inicio" que configuramos
+    
     include '../estructura/navbar.php'; 
     ?>
 
