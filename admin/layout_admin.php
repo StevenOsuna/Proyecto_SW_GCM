@@ -1,10 +1,11 @@
 <?php
+include_once './config/config.php.';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: ../auth/login_admin.php");
+    header("Location:". BASE_URL. "auth/login_admin.php");
     exit();
 }
 ?>
