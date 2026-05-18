@@ -13,7 +13,10 @@
 
 <?php 
     $pageTitle = "Inicio";
-    include 'paciente/estructura/navbar.php'; 
+    require_once 'config/config.php';
+    include ROOT_PATH . 'paciente/estructura/navbar.php'; 
+
+    
 ?>
 
 <main>
@@ -132,7 +135,7 @@
     </section>
 </main>
 
-<?php include 'estructura/footer.php'; ?>
+    <?php include ROOT_PATH . 'estructura/footer.php'; ?>
 
 <div class="modal fade" id="modalHistoria" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
