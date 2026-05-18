@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
 
+    <?php
+    require_once '../config/config.php';
+
+    ?>
+
     <title>Registro Paciente - Dr. Diego Rojas</title>
 </head>
 
@@ -34,7 +39,7 @@
                             <p class="text-muted small">Regístrate para gestionar tus citas médicas</p>
                         </div>
 
-                        <form action="../guardar_usuario.php" method="POST">
+                        <form action="<?php echo BASE_URL; ?>auth/guardar_usuario.php" method="POST">
                             
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Nombre Completo</label>

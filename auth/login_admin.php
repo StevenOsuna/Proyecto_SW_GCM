@@ -15,6 +15,8 @@ if (isset($_SESSION['admin_id'])) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
+
+    
 </head>
 
 <body>
@@ -22,6 +24,9 @@ if (isset($_SESSION['admin_id'])) {
 <?php 
 $pageTitle = "Login Administrador";
 include '../estructura/navbar.php';
+
+require_once '../config/config.php';
+
 ?>
 
 <main class="container d-flex justify-content-center align-items-center" style="min-height:70vh;">
@@ -35,7 +40,7 @@ include '../estructura/navbar.php';
                     Panel Administrativo
                 </h4>
 
-                <!-- 🔥 MENSAJES DE ERROR -->
+                <!--MENSAJES DE ERROR -->
                 <?php if (isset($_GET['error'])): ?>
                     <div class="alert alert-danger text-center">
                         <?php
@@ -50,7 +55,7 @@ include '../estructura/navbar.php';
                     </div>
                 <?php endif; ?>
 
-                <form action="../admin/validar_admin.php" method="POST">
+                <form action="<?php echo BASE_URL; ?>/admin/validar_admin.php" method="POST">
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Usuario</label>
@@ -75,7 +80,6 @@ include '../estructura/navbar.php';
 
 </main>
 
-<?php include '../estructura/footer.php'; ?>
-
+<?php include BASE_URL . 'estructura/footer.php'; ?>
 </body>
 </html>

@@ -9,9 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
+
+
+    <?php
+    require_once '../config/config.php';
+    ?>
+
+
+
 </head>
 
 <body class="bg-light">
+    
+
     <?php 
     $pageTitle = "Login";
     include '../estructura/navbar.php';
@@ -32,7 +42,7 @@
                             <p class="text-muted small">Ingrese sus credenciales para continuar</p>
                         </div>
 
-                        <form action="../validar_login.php" method="POST">
+                        <form action="<?php echo BASE_URL; ?>auth/validar_login.php" method="POST">
                             
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Email</label>
@@ -77,7 +87,7 @@
         </div>
     </main>
 
-    <?php include '../estructura/footer.php'; ?>
+    <?php include BASE_URL . 'estructura/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

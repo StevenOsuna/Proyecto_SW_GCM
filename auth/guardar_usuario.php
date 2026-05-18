@@ -1,5 +1,7 @@
 <?php
 include("../config/conexion.php");
+require_once '../config/config.php';
+
 
 // Recibir y limpiar datos básicos
 $nombre   = $_POST['nombre'];
@@ -34,8 +36,9 @@ $conn->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     
+    
     <?php if ($registro_exitoso): ?>
-    <meta http-equiv="refresh" content="5;url=auth/login.php" />
+    <meta http-equiv="refresh" content="5;url=<?php echo BASE_URL; ?>auth/login.php" />
     <?php endif; ?>
 </head>
 <body class="bg-light">
@@ -56,7 +59,7 @@ $conn->close();
                                 Tu cuenta ha sido creada correctamente. En unos segundos serás redirigido al inicio de sesión.
                             </p>
                             <div class="d-grid gap-2">
-                                <a href="auth/login.php" class="btn btn-primary btn-lg rounded-pill fw-bold shadow-sm">
+                                <a href="<?php echo BASE_URL; ?>auth/login.php" class="btn btn-primary btn-lg rounded-pill fw-bold shadow-sm">
                                     <i class="bi bi-box-arrow-in-right me-2"></i>Ir al Login ahora
                                 </a>
                             </div>
@@ -76,10 +79,10 @@ $conn->close();
                                 <small class="text-danger"><?php echo $error_mensaje; ?></small>
                             </p>
                             <div class="d-grid gap-2">
-                                <a href="auth/registro.php" class="btn btn-danger btn-lg rounded-pill fw-bold shadow-sm">
+                                <a href="<?php echo BASE_URL; ?>auth/registro.php" class="btn btn-danger btn-lg rounded-pill fw-bold shadow-sm">
                                     Intentar de nuevo
                                 </a>
-                                <a href="index.php" class="btn btn-outline-secondary rounded-pill fw-bold">
+                                <a href="<?php echo BASE_URL; ?>index.php" class="btn btn-outline-secondary rounded-pill fw-bold">
                                     Regresar al Inicio
                                 </a>
                             </div>
