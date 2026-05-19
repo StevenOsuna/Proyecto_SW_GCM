@@ -9,7 +9,7 @@ require_once("../config/conexion.php");
 ========================= */
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../auth/login_admin.php");
+    header("Location:" . BASE_URL . "auth/login_admin.php");
     exit();
 }
 

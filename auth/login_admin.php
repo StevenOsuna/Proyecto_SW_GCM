@@ -1,8 +1,10 @@
 <?php
 session_start();
+include '../config/conexion.php';
+include_once '../config/config.php';
 
 if (isset($_SESSION['admin_id'])) {
-    header("Location: ../admin/admin_panel.php");
+    header("Location:" . BASE_URL . "admin/admin_panel.php");
     exit();
 }
 ?>
@@ -14,20 +16,17 @@ if (isset($_SESSION['admin_id'])) {
     <title>Login Administrador</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="<?php BASE_URL; ?>assets/style.css">
 
     
 </head>
 
 <body>
 
-<?php 
-$pageTitle = "Login Administrador";
-include '../estructura/navbar.php';
-
-require_once '../config/config.php';
-
-?>
+ <?php 
+    $pageTitle = "Login Administrador";
+    include ROOT_PATH. 'estructura/navbar.php';
+    ?>
 
 <main class="container d-flex justify-content-center align-items-center" style="min-height:70vh;">
 
@@ -80,6 +79,6 @@ require_once '../config/config.php';
 
 </main>
 
-<?php include BASE_URL . 'estructura/footer.php'; ?>
+<?php include ROOT_PATH . 'estructura/footer.php'; ?>
 </body>
 </html>
