@@ -1,17 +1,18 @@
 <?php
 session_start();
 include("../config/conexion.php");
+include_once '../config/config.php';
 
 // 1. Seguridad: Si no hay sesión, al login
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../auth/login.php");
+    header("Location:" . BASE_URL . "/auth/login.php");
     exit();
 }
 
 $id_paciente = $_SESSION['usuario_id'];
 
 // 2. Obtener datos actuales de la tabla 'pacientes'
-$query = "SELECT nombre, correo, telefono FROM pacientes WHERE id = ?";
+$query = "SELECT nombre, email, telefono FROM pacientes WHERE id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $id_paciente);
 $stmt->execute();
@@ -34,7 +35,7 @@ $usuario = $resultado->fetch_assoc();
 
     <?php 
     $pageTitle = "Mi Perfil";
-    include 'estructura/navbar.php'; 
+    include ROOT_PATH. 'estructura/navbar.php'; 
     ?>
 
     <main class="container py-5" style="margin-top: 80px;">
@@ -70,7 +71,7 @@ $usuario = $resultado->fetch_assoc();
                             <label class="form-label fw-bold small text-secondary">Correo Electrónico</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-0"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control bg-light border-0" value="<?php echo htmlspecialchars($usuario['correo']); ?>" disabled>
+                                <input type="email" class="form-control bg-light border-0" value="<?php echo htmlspecialchars($usuario['email']); ?>" disabled>
                             </div>
                             <div class="form-text px-2">El correo no se puede modificar por seguridad.</div>
                         </div>
@@ -95,7 +96,7 @@ $usuario = $resultado->fetch_assoc();
         </div>
     </main>
 
-    <?php include 'estructura/footer.php'; ?>
+    <?php include ROOT_PATH. 'estructura/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
