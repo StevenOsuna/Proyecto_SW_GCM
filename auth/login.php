@@ -24,7 +24,7 @@
 
     <?php 
     $pageTitle = "Login";
-    include '../estructura/navbar.php';
+    include ROOT_PATH. 'estructura/navbar.php';
     ?>
 
     <main class="container d-flex align-items-center justify-content-center" style="min-height: 85vh; padding-top: 50px; padding-bottom: 50px;">

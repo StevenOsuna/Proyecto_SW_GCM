@@ -4,6 +4,9 @@ if (!isset($_SESSION['usuario_id'])) {
     header("Location: auth/login.php");
     exit();
 }
+
+include '../config/conexion.php';
+include_once '../config/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +29,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
     <?php 
     $pageTitle = 'Agendar Cita';
-    include 'estructura/navbar.php'; 
+    include ROOT_PATH. 'estructura/navbar.php'; 
     ?>
 
     <main class="container py-5" style="margin-top: 60px;">
@@ -34,7 +37,7 @@ if (!isset($_SESSION['usuario_id'])) {
             <div class="col-lg-10">
                 
                 <div class="d-flex align-items-center mb-4">
-                    <a href="paciente/panel.php" class="btn btn-outline-primary rounded-circle me-3 shadow-sm">
+                    <a href="<?php echo BASE_URL; ?>paciente/panel.php" class="btn btn-outline-primary rounded-circle me-3 shadow-sm">
                         <i class="bi bi-arrow-left"></i>
                     </a>
                     <div>
@@ -57,7 +60,7 @@ if (!isset($_SESSION['usuario_id'])) {
         </div>
     </main>
 
-    <?php include 'estructura/footer.php'; ?>
+    <?php include ROOT_PATH. 'estructura/footer.php'; ?>
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {

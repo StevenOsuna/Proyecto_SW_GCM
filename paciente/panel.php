@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../config/conexion.php");
+include '../config/config.php';
 
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: ../auth/login.php");
@@ -30,13 +31,13 @@ $proxima_cita = $stmt_p->get_result()->fetch_assoc();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/style.css">
 </head>
 <body>
 
     <?php 
     $pageTitle = "Mi Panel";
-    include 'estructura/navbar.php'; 
+    include ROOT_PATH.'estructura/navbar.php'; 
     ?>
 
     <main class="container py-5">
@@ -75,7 +76,7 @@ $proxima_cita = $stmt_p->get_result()->fetch_assoc();
                         </div>
                         <h4 class="fw-bold">Agendar Cita</h4>
                         <p class="text-muted small mb-4">Reserva un espacio con el Dr. Rojas en segundos.</p>
-                        <a href="../citas.php" class="btn btn-primary w-100 mt-auto">
+                        <a href="<?php echo BASE_URL; ?>paciente/citas.php" class="btn btn-primary w-100 mt-auto">
                             Nueva Cita
                         </a>
                     </div>
@@ -115,7 +116,7 @@ $proxima_cita = $stmt_p->get_result()->fetch_assoc();
         </div>
     </main>
 
-    <?php include 'estructura/footer.php'; ?>
+    <?php include ROOT_PATH. 'estructura/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

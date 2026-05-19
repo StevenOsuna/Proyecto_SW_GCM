@@ -1,7 +1,5 @@
 <?php
 
-require_once '../config/config.php';
-
 // Aseguramos que la sesión esté activa para leer los datos
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -22,6 +20,11 @@ $sesion_activa = isset($_SESSION['usuario_id']) || isset($_SESSION['id']) || iss
                 <small class="text-muted lh-1 mt-1" style="font-size: 0.8rem; letter-spacing: 0.5px;">Médico General</small>
             </div>
         </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="menu">
             <ul class="navbar-nav align-items-center">

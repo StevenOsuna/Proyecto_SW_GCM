@@ -1,9 +1,10 @@
 <?php
 session_start();
 include("../config/conexion.php"); 
+include '../config/config.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../auth/login.php");
+    header("Location: " . BASE_URL .  "auth/login.php");
     exit();
 }
 
@@ -32,7 +33,7 @@ $resultado = $stmt->get_result();
 
     <?php 
     $pageTitle = "Mis Consultas";
-    include 'estructura/navbar.php'; 
+    include ROOT_PATH.'estructura/navbar.php'; 
     ?>
 
     <main class="container py-5" style="margin-top: 80px;">
@@ -113,5 +114,10 @@ $resultado = $stmt->get_result();
         })
     }
     </script>
+
+    <?php
+    include ROOT_PATH.'estructura/footer.php'; 
+    ?>
+
 </body>
 </html>

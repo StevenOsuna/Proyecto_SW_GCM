@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+    $pageTitle = "Inicio";
+    session_start();
+    require_once 'config/config.php';
+    include ROOT_PATH . '/estructura/navbar.php'; 
+  
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,13 +18,6 @@
 
 <body>
 
-<?php 
-    $pageTitle = "Inicio";
-    require_once 'config/config.php';
-    include ROOT_PATH . 'paciente/estructura/navbar.php'; 
-
-    
-?>
 
 <main>
     <section class="hero-principal d-flex align-items-center">
