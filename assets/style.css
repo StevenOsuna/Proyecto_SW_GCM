@@ -1,305 +1,321 @@
 /* --- 1. CONFIGURACIÓN BASE --- */
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-    padding-top: 80px; 
-    background-color: #fcfcfc;
+  padding-top: 80px;
+  background-color: #fcfcfc;
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }
 
 /* --- 2. NAVBAR (BARRA DE NAVEGACIÓN) --- */
 .navbar {
-    border-bottom: 2px solid #eee;
-    padding: 0.8rem 0;
-    background-color: #ffffff !important;
+  border-bottom: 2px solid #eee;
+  padding: 0.8rem 0;
+  background-color: #ffffff !important;
 }
 
 .navbar-brand {
-    font-size: 1.4rem;
-    transition: transform 0.3s ease;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
 }
 
 .nombre-doctor-nav {
-    color: #333 !important;
-    font-weight: 700;
+  color: #333 !important;
+  font-weight: 700;
 }
 
 /* --- 3. SECCIÓN HERO PRINCIPAL --- */
 .hero-principal {
-    height: 90vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.3) 100%), 
-                url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.95) 30%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1350&q=80")
+      center/cover no-repeat;
 }
 
 .titulo-principal-hero {
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    color: #007bff;
-    margin-bottom: 1.5rem;
-    max-width: 800px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
 }
 
 .descripcion-hero {
-    margin-bottom: 2rem;
-    max-width: 650px;
+  margin-bottom: 2rem;
+  max-width: 650px;
 }
 
-.descripcion-hero h2, 
-.descripcion-hero p, 
+.descripcion-hero h2,
+.descripcion-hero p,
 .descripcion-hero strong {
-    color: #0056b3 !important; 
+  color: #0056b3 !important;
 }
 
 /* --- 4. BOTONES Y TARJETAS --- */
-.btn-agendar-hero, .btn-primary {
-    background-color: #007bff !important; 
-    color: white !important;
-    border: none;
-    padding: 12px 35px;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+.btn-agendar-hero,
+.btn-primary {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none;
+  padding: 12px 35px;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-.btn-agendar-hero:hover, .btn-primary:hover {
-    background-color: #0056b3 !important;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+.btn-agendar-hero:hover,
+.btn-primary:hover {
+  background-color: #0056b3 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .card-servicio {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 15px;
-    overflow: hidden;
-    border: none !important;
-    background: white;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+  border: none !important;
+  background: white;
 }
 
 .card-servicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15) !important;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.15) !important;
 }
 
 /* --- 5. PANEL DEL PACIENTE --- */
 .card-body .bi {
-    display: inline-block;
-    padding: 20px;
-    background-color: #f0f7ff;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    color: #007bff;
+  display: inline-block;
+  padding: 20px;
+  background-color: #f0f7ff;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  color: #007bff;
 }
 
 .card-servicio:hover .bi {
-    background-color: #007bff;
-    color: #ffffff !important;
-    transform: rotate(10deg) scale(1.1);
+  background-color: #007bff;
+  color: #ffffff !important;
+  transform: rotate(10deg) scale(1.1);
 }
 
 /* --- 6. FORMULARIOS --- */
 .form-control {
-    border-radius: 12px;
-    padding: 12px;
+  border-radius: 12px;
+  padding: 12px;
 }
 
 /* --- 7. FOOTER --- */
 .footer-medico {
-    background-color: #212529;
-    color: #ffffff;
-    padding: 3rem 0;
+  background-color: #212529;
+  color: #ffffff;
+  padding: 3rem 0;
 }
 
 /* --- 8. WHATSAPP --- */
 .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #FFF !important;
-    border-radius: 50px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff !important;
+  border-radius: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* --- 9. FULLCALENDAR --- */
 
-:root { 
-    --fc-border-color: #eeeeee; 
-    --fc-button-bg-color: #007bff; 
-    --fc-button-border-color: #007bff; 
-    --fc-today-bg-color: #f0f7ff;
+:root {
+  --fc-border-color: #eeeeee;
+  --fc-button-bg-color: #007bff;
+  --fc-button-border-color: #007bff;
+  --fc-today-bg-color: #f0f7ff;
 }
 
 /* Toolbar y Título */
-.fc .fc-toolbar-title { 
-    font-size: 1.6rem !important;
-    font-weight: 800; 
-    color: #2c3e50; 
-    text-transform: capitalize; 
+.fc .fc-toolbar-title {
+  font-size: 1.6rem !important;
+  font-weight: 800;
+  color: #2c3e50;
+  text-transform: capitalize;
 }
 
 /* Forzar que el número siempre esté visible arriba */
 .fc .fc-daygrid-day-top {
-    flex-direction: row !important;
-    justify-content: flex-end !important;
-    z-index: 10 !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  z-index: 10 !important;
 }
 
 .fc .fc-daygrid-day-number {
-    color: #212529 !important; /* Negro sólido */
-    font-weight: 700 !important;
-    font-size: 1rem !important;
-    padding: 8px 12px !important;
-    text-decoration: none !important;
-    position: relative !important;
+  color: #212529 !important; /* Negro sólido */
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 8px 12px !important;
+  text-decoration: none !important;
+  position: relative !important;
 }
 
 /* DÍAS PASADOS (Grisado real) */
-.fc-day-past, 
+.fc-day-past,
 .fc-day-past .fc-daygrid-day-frame,
 .fc-day-past .fc-daygrid-day-events,
 .fc-day-past .fc-daygrid-day-bg-highlight {
-    background-color: #f8f9fa !important; /* Gris suave */
+  background-color: #f8f9fa !important; /* Gris suave */
 }
 
 /* El número en días pasados (tenue pero legible) */
 .fc-day-past .fc-daygrid-day-number {
-    color: #adb5bd !important; 
+  color: #adb5bd !important;
 }
 
 /* DÍA DE HOY (Círculo azul profesional) */
 .fc-day-today {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .fc-day-today .fc-daygrid-day-number {
-    background-color: #007bff !important;
-    color: #ffffff !important;
-    border-radius: 50% !important;
-    width: 32px !important;
-    height: 32px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 4px !important;
-    padding: 0 !important;
+  background-color: #007bff !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 4px !important;
+  padding: 0 !important;
 }
 
 /* Cabecera de días (DOM, LUN...) */
 .fc .fc-col-header-cell {
-    background-color: #f8f9fa;
-    padding: 10px 0;
+  background-color: #f8f9fa;
+  padding: 10px 0;
 }
 
-.fc .fc-col-header-cell-cushion { 
-    color: #007bff !important; 
-    font-weight: 800 !important;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    text-decoration: none !important;
+.fc .fc-col-header-cell-cushion {
+  color: #007bff !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-decoration: none !important;
 }
 
 /* Quitar resaltados amarillos por defecto */
 .fc-daygrid-day-bg-highlight {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Hover en días futuros */
-.fc-daygrid-day:hover:not(.fc-day-past) { 
-    background-color: #f0f7ff !important; 
-    cursor: pointer; 
+.fc-daygrid-day:hover:not(.fc-day-past) {
+  background-color: #f0f7ff !important;
+  cursor: pointer;
 }
 
 /* Botones del calendario */
 .fc .fc-button-primary {
-    border-radius: 10px !important;
-    font-weight: 600;
+  border-radius: 10px !important;
+  font-weight: 600;
 }
 
 /* --- 10. ESTILOS ESPECÍFICOS PARA GUARDAR CITA Y ALERTAS --- */
 
 /* Bloqueo visual de Domingos en el calendario */
 .fc-day-sun {
-    background-color: #f8f9fa !important;
+  background-color: #f8f9fa !important;
 }
 
 .fc-day-sun .fc-daygrid-day-number {
-    color: #ced4da !important;
-    text-decoration: line-through;
-    opacity: 0.5;
+  color: #ced4da !important;
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 /* Personalización de SweetAlert2 */
 .swal2-popup {
-    border-radius: 20px !important; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    padding: 2rem !important;
+  border-radius: 20px !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  padding: 2rem !important;
 }
 
 .swal2-title {
-    color: #2c3e50 !important;
-    font-weight: 700 !important;
+  color: #2c3e50 !important;
+  font-weight: 700 !important;
 }
 
 .swal2-styled.swal2-confirm {
-    background-color: #007bff !important; /* Tu azul principal */
-    border-radius: 50px !important; /* Botón tipo cápsula */
-    padding: 12px 35px !important;
-    font-weight: 600 !important;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+  background-color: #007bff !important; /* Tu azul principal */
+  border-radius: 50px !important; /* Botón tipo cápsula */
+  padding: 12px 35px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
 }
 
 /* Efecto de desenfoque al fondo cuando aparece el mensaje */
 .swal2-container.swal2-backdrop-show {
-    backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 /* --- 11. ESTILOS PARA ALERTAS (SWEETALERT2) --- */
 
 /* Ventana emergente redondeada como tus tarjetas */
 .swal2-popup {
-    border-radius: 20px !important;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    padding: 2rem !important;
+  border-radius: 20px !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  padding: 2rem !important;
 }
 
 /* Títulos de la alerta */
 .swal2-title {
-    color: #2c3e50 !important;
-    font-weight: 700 !important;
+  color: #2c3e50 !important;
+  font-weight: 700 !important;
 }
 
 /* Botón de confirmación estilo "Cápsula" */
 .swal2-styled.swal2-confirm {
-    background-color: #007bff !important;
-    border-radius: 50px !important;
-    padding: 12px 35px !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
+  background-color: #007bff !important;
+  border-radius: 50px !important;
+  padding: 12px 35px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2) !important;
 }
 
 /* Ajuste fino para la sombra de la alerta */
 .swal2-container.swal2-backdrop-show {
-    background: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(4px); /* Difumina un poco el fondo para dar elegancia */
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(4px); /* Difumina un poco el fondo para dar elegancia */
+}
+
+.main-auth {
+  min-height: calc(100vh - 160px);
+  margin-top: 100px;
 }

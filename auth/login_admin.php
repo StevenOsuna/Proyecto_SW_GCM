@@ -29,7 +29,7 @@ if (isset($_SESSION['admin_id'])) {
     include ROOT_PATH. 'estructura/navbar.php';
     ?>
 
-<main class="container d-flex justify-content-center align-items-center" style="min-height:70vh;">
+<main class="container d-flex align-items-center justify-content-center py-5 main-auth">
 
     <div class="col-md-5 col-lg-4">
 
