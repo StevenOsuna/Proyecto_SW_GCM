@@ -1,5 +1,5 @@
 <?php
-include("../api/conexion.php");
+include ROOT_PATH. 'config/conexion.php';
 
 $sql = "SELECT fecha, COUNT(*) as total FROM citas GROUP BY fecha";
 $result = $conn->query($sql);

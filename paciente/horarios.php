@@ -1,9 +1,10 @@
 <?php
 session_start();
 include("../config/conexion.php");
+include '../config/config.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location:" . BASE_URL . "/auth/login.php");
+    header("Location:" . BASE_URL . "auth/login.php");
     exit();
 }
 
@@ -26,22 +27,47 @@ if ($result_check->num_rows > 0) {
 }
 
 $fecha_formateada = date("d/m/Y", strtotime($fecha));
+$dia_semana = date('N', strtotime($fecha));
+// 1 = lunes
+// 6 = sábado
+// 7 = domingo
 
 /* =========================
    OBTENER HORARIOS ACTIVOS
 ========================= */
 
-$stmt = $conn->prepare("
-    SELECT h.hora 
-    FROM horarios h
-    WHERE h.activo = 1
-    AND h.hora NOT IN (
-        SELECT c.hora 
-        FROM citas c 
-        WHERE c.fecha = ?
-    )
-    ORDER BY h.hora ASC
-");
+if ($dia_semana == 6) {
+
+    // SÁBADOS → hasta la 1 PM
+    $stmt = $conn->prepare("
+        SELECT h.hora 
+        FROM horarios h
+        WHERE h.activo = 1
+        AND h.hora <= '13:00:00'
+        AND h.hora NOT IN (
+            SELECT c.hora 
+            FROM citas c 
+            WHERE c.fecha = ?
+        )
+        ORDER BY h.hora ASC
+    ");
+
+} else {
+
+    // LUNES A VIERNES
+    $stmt = $conn->prepare("
+        SELECT h.hora 
+        FROM horarios h
+        WHERE h.activo = 1
+        AND h.hora NOT IN (
+            SELECT c.hora 
+            FROM citas c 
+            WHERE c.fecha = ?
+        )
+        ORDER BY h.hora ASC
+    ");
+
+}
 
 $stmt->bind_param("s", $fecha);
 $stmt->execute();
@@ -90,7 +116,7 @@ while($row = $result->fetch_assoc()) {
 
     <?php 
     $pageTitle = 'Seleccionar Hora';
-    include '../estructura/navbar.php'; 
+    include ROOT_PATH . 'estructura/navbar.php';
     ?>
 
     <main class="container py-5" style="margin-top: 60px;">
@@ -132,7 +158,7 @@ while($row = $result->fetch_assoc()) {
                                 <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-bold py-3 shadow">
                                     Confirmar Cita <i class="bi bi-check-circle ms-2"></i>
                                 </button>
-                                <a href="../citas.php" class="btn btn-link text-decoration-none text-muted small">
+                                <a href="<?php echo BASE_URL; ?>paciente/citas.php" class="btn btn-link text-decoration-none text-muted small">
                                     <i class="bi bi-arrow-left"></i> Cambiar fecha
                                 </a>
                             </div>
