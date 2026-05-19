@@ -1,4 +1,7 @@
-<?php include 'layout_admin.php'; ?>
+<?php 
+    include 'layout_admin.php'; 
+    include_once '../config/config.php';
+?>
 
 <div class="text-center mb-5">
     <span class="zona-privada">ZONA PRIVADA</span>
@@ -38,7 +41,7 @@
         <div class="card admin-card p-4 text-center">
             <i class="bi bi-box-arrow-right fs-1 text-danger mb-3"></i>
             <h5>Cerrar Sesión</h5>
-            <a href="<?php echo BASE_URL;?> config/logout_admin.php" class="btn btn-outline-danger mt-3">Salir</a>
+            <a href="<?php echo BASE_URL;?>config/logout_admin.php" class="btn btn-outline-danger mt-3">Salir</a>
         </div>
     </div>
 
