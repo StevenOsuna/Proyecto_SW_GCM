@@ -3,7 +3,7 @@ session_start();
 include("../config/conexion.php");
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../auth/login.php");
+    header("Location:" . BASE_URL . "/auth/login.php");
     exit();
 }
 

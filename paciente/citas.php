@@ -117,7 +117,7 @@ include_once '../config/config.php';
 
                 // Redirección si es hoy o futuro
                 if (fechaSeleccionada >= hoy) {
-                    window.location.href = "paciente/horarios.php?fecha=" + info.dateStr;
+                    window.location.href = "<?php echo BASE_URL; ?>paciente/horarios.php?fecha=" + info.dateStr;
                 }
             }
         });
