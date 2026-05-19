@@ -34,7 +34,7 @@
                         </p>
                     </div>
                     <div class="mt-4">
-                        <a href="auth/login.php" class="btn btn-agendar-hero shadow-lg">
+                        <a href="<?php echo $link_agendar; ?>" class="btn btn-agendar-hero shadow-lg">
                             <i class="bi bi-calendar-check me-2"></i>Agendar Cita
                         </a>
                     </div>
