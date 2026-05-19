@@ -38,13 +38,13 @@
         <div class="card admin-card p-4 text-center">
             <i class="bi bi-box-arrow-right fs-1 text-danger mb-3"></i>
             <h5>Cerrar Sesión</h5>
-            <a href="../config/logout_admin.php" class="btn btn-outline-danger mt-3">Salir</a>
+            <a href="<?php echo BASE_URL;?> config/logout_admin.php" class="btn btn-outline-danger mt-3">Salir</a>
         </div>
     </div>
 
 </div>
 
 </main>
-<?php include '../estructura/footer.php'; ?>
+<?php include ROOT_PATH . 'estructura/footer.php'; ?>
 </body>
 </html>

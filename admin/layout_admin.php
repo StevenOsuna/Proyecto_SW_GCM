@@ -1,5 +1,5 @@
 <?php
-include_once './config/config.php.';
+include_once '../config/config.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_id'])) {
     <title>Zona Administrativa</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="<?php BASE_URL; ?>assets/style.css">
 
     <style>
         /* Fondo distinto para admin */
@@ -68,6 +68,5 @@ if (!isset($_SESSION['admin_id'])) {
 
 <body>
 
-<?php include '../estructura/navbar.php'; ?>
 
 <main class="container py-5">
